@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const database = require("./controllers/databaseControllers");
+const categoryRoutes = require("./routes/categories");
 const lessonRoutes = require("./routes/lessons");
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "client/build")));
 app.use(express.json());
 
+app.use("/api/categories", categoryRoutes);
 app.use("/api/lessons", lessonRoutes);
 
 app.get("/*", function (req, res) {
