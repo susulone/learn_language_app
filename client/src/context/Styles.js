@@ -6,6 +6,18 @@ const StylesContext = createContext({});
 export const StylesProvider = ({ children }) => {
   const responsiveLayout = useBreakpointValue({ base: 'column', md: 'row' });
 
+  const responsiveBodyText = useBreakpointValue({
+    base: 'md',
+    md: 'lg',
+    lg: 'lg',
+  });
+
+  const responsiveBodyTextLg = useBreakpointValue({
+    base: 'lg',
+    md: 'xl',
+    lg: 'xl',
+  });
+
   const responsiveHeadingSm = useBreakpointValue({
     base: 'lg',
     md: 'xl',
@@ -22,6 +34,8 @@ export const StylesProvider = ({ children }) => {
     <StylesContext.Provider
       value={{
         responsiveLayout,
+        responsiveBodyText,
+        responsiveBodyTextLg,
         responsiveHeadingSm,
         responsiveHeadingXl,
       }}
