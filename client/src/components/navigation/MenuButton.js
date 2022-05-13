@@ -30,7 +30,7 @@ const MenuButton = () => {
           </MenuItem>
           <MenuDivider />
           <MenuItem fontWeight={'semibold'}>
-            <Link to="/lessons"> Lessons </Link>
+            <Link to="/lessons/latest"> Lessons </Link>
           </MenuItem>
           <MenuItem fontWeight={'semibold'}>
             <Link to="/search"> Search </Link>

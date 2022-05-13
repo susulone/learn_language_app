@@ -1,7 +1,8 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 const Lessons = () => {
-  return <div>Lessons</div>;
+  return <Outlet />;
 };
 
 export default Lessons;

@@ -8,6 +8,8 @@ import About from './pages/About';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
 import Lessons from './pages/Lessons';
+import LessonsLatest from './views/LessonsLatest';
+import LessonPage from './views/LessonPage';
 import Search from './pages/Search';
 
 function App() {
@@ -19,7 +21,10 @@ function App() {
             <NavBar />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/lessons" element={<Lessons />} />
+              <Route path="/lessons" element={<Lessons />}>
+                <Route path="latest" element={<LessonsLatest />} />
+                <Route path=":lessonId" element={<LessonPage />} />
+              </Route>
               <Route path="/about" element={<About />} />
               <Route path="/search" element={<Search />} />
               <Route path="*" element={<ErrorPage />} />
