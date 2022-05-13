@@ -1,0 +1,27 @@
+{
+	"name": "learn_language_app",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"devStart": "nodemon server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/susulone/learn_language_app.git"
+	},
+	"keywords": [],
+	"author": "Suvi Sulonen",
+	"license": "GPL-3.0-or-later",
+	"homepage": "https://github.com/susulone/learn_language_app#readme",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.1",
+		"express": "^4.18.1",
+		"mysql": "^2.18.1"
+	},
+	"devDependencies": {
+		"eslint": "^8.15.0",
+		"nodemon": "^2.0.16"
+	}
+}
