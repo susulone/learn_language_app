@@ -28,7 +28,7 @@ module.exports = {
 				(err, lesson) => {
 					if (err) reject(err);
 					else if (lesson.length === 0) resolve(null);
-					else resolve(lesson);
+					else resolve(lesson[0]);
 				}
 			);
 		}),
