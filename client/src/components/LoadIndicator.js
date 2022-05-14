@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import StylesContext from '../context/Styles';
+import StylesContext from '../contexts/Styles';
 import { Box, Spinner } from '@chakra-ui/react';
 
 const LoadIndicator = () => {

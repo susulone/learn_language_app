@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import GlobalContext from '../context/Globals';
-import StylesContext from '../context/Styles';
+import GlobalContext from '../contexts/Globals';
+import StylesContext from '../contexts/Styles';
 import { Box, Button, Divider, Flex, Heading, Text } from '@chakra-ui/react';
 import LoadIndicator from '../components/LoadIndicator';
 

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import StylesContext from '../../context/Styles';
+import StylesContext from '../../contexts/Styles';
 import {
   Container,
   Flex,

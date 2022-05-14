@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import GlobalContext from '../../context/Globals';
+import GlobalContext from '../../contexts/Globals';
 import {
   Button,
   Menu,

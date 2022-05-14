@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import GlobalContext from '../context/Globals';
-import StylesContext from '../context/Styles';
+import GlobalContext from '../contexts/Globals';
+import StylesContext from '../contexts/Styles';
 import { Box, Flex, Heading } from '@chakra-ui/react';
 import LoadIndicator from '../components/LoadIndicator';
 import LessonCard from '../components/LessonCard';

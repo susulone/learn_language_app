@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import GlobalContext from '../context/Globals';
-import StylesContext from '../context/Styles';
+import GlobalContext from '../contexts/Globals';
+import StylesContext from '../contexts/Styles';
 import { Box, Tag, Heading } from '@chakra-ui/react';
 
 const CategoryContainer = () => {

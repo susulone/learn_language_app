@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import StylesContext from '../context/Styles';
+import StylesContext from '../contexts/Styles';
 import { Button, Flex, Heading, Stack } from '@chakra-ui/react';
 
 const ErrorPage = () => {

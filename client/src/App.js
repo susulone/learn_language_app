@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { GlobalProvider } from './context/Globals';
-import { StylesProvider } from './context/Styles';
+import { GlobalProvider } from './contexts/Globals';
+import { StylesProvider } from './contexts/Styles';
 import { Container } from '@chakra-ui/react';
 import NavBar from './components/navigation/NavBar';
 import About from './pages/About';
