@@ -16,6 +16,7 @@ const LessonsLatest = () => {
     <Flex
       direction="column"
       align="center"
+      textAlign="left"
       // border="solid"   // for testing only
     >
       <Box

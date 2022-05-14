@@ -23,7 +23,7 @@ const LessonPage = () => {
   } = useContext(StylesContext);
 
   return (
-    <Flex direction="column" align="center" m="2" p="2">
+    <Flex direction="column" align="center" textAlign="left" m="2" p="2">
       {contentIsLoading === true && <LoadIndicator />}
       {contentIsLoading === false && (
         <Box width={responsiveContainerLg} direction="column" p="4">
