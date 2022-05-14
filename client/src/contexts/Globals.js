@@ -53,6 +53,16 @@ export const GlobalProvider = ({ children }) => {
     getCategoryById();
   }, [categoryId]);
 
+  let [wordPairs, setWordPairs] = useState([]);
+  useEffect(() => {
+    async function getWordPairsByLessonId() {
+      let response = await axios.get(`/api/words/by-lesson-id/${lessonId}`);
+      let data = await response.data;
+      setWordPairs(data);
+    }
+    getWordPairsByLessonId();
+  }, [lessonId]);
+
   return (
     <GlobalContext.Provider
       value={{
@@ -72,6 +82,8 @@ export const GlobalProvider = ({ children }) => {
         setCategoryId,
         category,
         setCategory,
+        wordPairs,
+        setWordPairs,
       }}
     >
       {children}

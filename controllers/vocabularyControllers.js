@@ -33,7 +33,7 @@ module.exports = {
 				lessonId,
 				(err, wordPairs) => {
 					if (err) reject(err);
-					else if (wordPairs.length === 0) resolve(null);
+					// else if (wordPairs.length === 0) resolve(null);
 					else resolve(wordPairs);
 				}
 			);

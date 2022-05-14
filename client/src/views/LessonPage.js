@@ -1,13 +1,26 @@
 import React, { useContext } from 'react';
 import GlobalContext from '../contexts/Globals';
 import StylesContext from '../contexts/Styles';
-import { Box, Button, Divider, Flex, Heading, Text } from '@chakra-ui/react';
+import {
+  Box,
+  IconButton,
+  Divider,
+  Flex,
+  Heading,
+  Text,
+} from '@chakra-ui/react';
+import { FiArrowRightCircle } from 'react-icons/fi';
 import LoadIndicator from '../components/LoadIndicator';
+import WordPractice from '../components/wordPractice/WordPractice';
 
 const LessonPage = () => {
   let { contentIsLoading, lesson } = useContext(GlobalContext);
-  const { responsiveBodyText, responsiveContainerLg, responsiveHeadingLg } =
-    useContext(StylesContext);
+  const {
+    responsiveBodyText,
+    responsiveContainerLg,
+    responsiveHeadingMd,
+    responsiveHeadingLg,
+  } = useContext(StylesContext);
 
   return (
     <Flex direction="column" align="center" m="2" p="2">
@@ -17,17 +30,42 @@ const LessonPage = () => {
           <Heading as="h2" maxWidth="80%" fontSize={responsiveHeadingLg} py="4">
             {lesson.title}
           </Heading>
-          <Divider />
-          <Text
-            as="body"
-            fontSize={responsiveBodyText}
-            fontWeight="medium"
-            lineHeight="tall"
-            mt="5"
-          >
+          <Divider border="1px" />
+          <Text as="body" fontSize={responsiveBodyText} mt="5">
             {lesson.description}
           </Text>
-          <Button mt="5">Let's Practise</Button>
+          <Text as="body" fontSize={responsiveBodyText} mt="2">
+            Let's start by going through the words for this lesson.
+          </Text>
+          <Text as="body" fontSize={responsiveBodyText} mt="2">
+            Langbot will be helping you by showing you the word first in English
+            and if you give them a little poke they will show the word's Swedish
+            translation.
+          </Text>
+          <Box align="center">
+            <WordPractice />
+          </Box>
+          <Flex
+            direction="row"
+            alignItems="center"
+            justifyContent="space-evenly"
+            mt="5"
+          >
+            <Heading maxWidth="70%" fontSize={responsiveHeadingMd}>
+              Let's test what you have learned?
+            </Heading>
+            <IconButton
+              aria-label="Go to quiz"
+              onClick={() => {}}
+              variant="link"
+              fontSize="4xl"
+              icon={<FiArrowRightCircle />}
+              _hover={{
+                transform: 'scale(0.9)',
+                color: '#bec3c9',
+              }}
+            />
+          </Flex>
         </Box>
       )}
     </Flex>
