@@ -11,3 +11,19 @@ http://localhost:8080/api/categories/
 ###
 
 http://localhost:8080/api/categories/1
+
+###
+
+http://localhost:8080/api/words/swe
+
+###
+
+http://localhost:8080/api/words/eng
+
+###
+
+http://localhost:8080/api/words/all-matches
+
+###
+
+http://localhost:8080/api/words/by-lesson-id/1
