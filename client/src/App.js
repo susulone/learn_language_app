@@ -17,7 +17,7 @@ function App() {
     <GlobalProvider>
       <StylesProvider>
         <BrowserRouter>
-          <Container minH="100 vh" maxW="100vw">
+          <Container minH="100 vh" maxW="100vw" align="center">
             <NavBar />
             <Routes>
               <Route path="/" element={<Home />} />

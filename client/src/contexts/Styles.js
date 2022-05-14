@@ -12,6 +12,12 @@ export const StylesProvider = ({ children }) => {
     lg: 'lg',
   });
 
+  const responsiveContainerLg = useBreakpointValue({
+    base: 'md',
+    md: 'lg',
+    lg: 'xl',
+  });
+
   const responsiveBodyText = useBreakpointValue({
     base: 'md',
     md: 'lg',
@@ -61,11 +67,18 @@ export const StylesProvider = ({ children }) => {
 
   const responsiveButtonLg = useBreakpointValue({ base: 'md', md: 'lg' });
 
+  const responsiveImg = useBreakpointValue({
+    base: '200px',
+    md: '225px',
+    lg: '250px',
+  });
+
   return (
     <StylesContext.Provider
       value={{
         responsiveLayout,
         responsiveContainerSm,
+        responsiveContainerLg,
         responsiveBodyText,
         responsiveBodyTextLg,
         responsiveHeadingSm,
@@ -75,6 +88,7 @@ export const StylesProvider = ({ children }) => {
         responsiveButtonSm,
         responsiveButtonMd,
         responsiveButtonLg,
+        responsiveImg,
       }}
     >
       {children}

@@ -1,20 +1,24 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import StylesContext from '../contexts/Styles';
-import { Button, Flex, Heading, Stack } from '@chakra-ui/react';
+import { Button, Flex, Heading, Image, Stack } from '@chakra-ui/react';
+import SadLangBot from '../assets/langbot-404.svg';
 
 const ErrorPage = () => {
-  let { responsiveBodyTextLg } = useContext(StylesContext);
+  let { responsiveBodyTextLg, responsiveContainerLg, responsiveImg } =
+    useContext(StylesContext);
   return (
     <Flex
-      //border='2px' // for testing only
+      maxWidth={responsiveContainerLg}
+      // border="2px" // for testing only
+      direction="column"
       justify="center"
       align="center"
-      minHeight="80vh"
+      minHeight="90vh"
       m="2"
     >
       <Stack
-        //border='1px' // for testing only
+        // border="1px" // for testing only
         direction="column"
         align="center"
         spacing="10"
@@ -38,6 +42,13 @@ const ErrorPage = () => {
           <Link to="/"> Home </Link>
         </Button>
       </Stack>
+      <Flex width="100%" justify="right" mt="16">
+        <Image
+          height={responsiveImg}
+          src={SadLangBot}
+          alt="Langbot looking sad and saying 'we are lost, let's go back home!'"
+        />
+      </Flex>
     </Flex>
   );
 };
