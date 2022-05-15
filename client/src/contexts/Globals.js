@@ -5,6 +5,7 @@ const GlobalContext = createContext({});
 
 export const GlobalProvider = ({ children }) => {
   let [contentIsLoading, setContentIsLoading] = useState(true);
+  let [categoryImage, setCategoryImage] = useState('lessons');
 
   let [userRole, setUserRole] = useState('student');
 
@@ -68,6 +69,8 @@ export const GlobalProvider = ({ children }) => {
       value={{
         contentIsLoading,
         setContentIsLoading,
+        categoryImage,
+        setCategoryImage,
         userRole,
         setUserRole,
         lessons,

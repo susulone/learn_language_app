@@ -18,9 +18,26 @@ export const StylesProvider = ({ children }) => {
     lg: 'xl',
   });
 
+  const responsiveContainerXl = useBreakpointValue({
+    base: 'lg',
+    md: 'xl',
+    lg: '2xl',
+  });
+
+  const responsiveContainer2xl = useBreakpointValue({
+    base: 'xl',
+    md: '2xl',
+    lg: '3xl',
+  });
+
+  const responsiveBodyTextSm = useBreakpointValue({
+    base: 'sm',
+    md: 'md',
+  });
+
   const responsiveBodyText = useBreakpointValue({
-    base: 'md',
-    md: 'lg',
+    base: 'sm',
+    md: 'md',
     lg: 'lg',
   });
 
@@ -28,6 +45,11 @@ export const StylesProvider = ({ children }) => {
     base: 'lg',
     md: 'xl',
     lg: 'xl',
+  });
+
+  const responsiveHeadingXs = useBreakpointValue({
+    base: 'lg',
+    md: 'xl',
   });
 
   const responsiveHeadingSm = useBreakpointValue({
@@ -54,10 +76,10 @@ export const StylesProvider = ({ children }) => {
     lg: '5xl',
   });
 
-  const responsiveButtonSm = useBreakpointValue({
-    sm: 'sm',
-    md: 'md',
-  });
+  // const responsiveButtonSm = useBreakpointValue({
+  //   sm: 'sm',
+  //   md: 'md',
+  // });
 
   const responsiveButtonMd = useBreakpointValue({
     sm: 'sm',
@@ -68,9 +90,9 @@ export const StylesProvider = ({ children }) => {
   const responsiveButtonLg = useBreakpointValue({ base: 'md', md: 'lg' });
 
   const responsiveImg = useBreakpointValue({
-    base: '200px',
-    md: '225px',
-    lg: '250px',
+    base: '180px',
+    md: '200px',
+    lg: '220px',
   });
 
   return (
@@ -79,13 +101,17 @@ export const StylesProvider = ({ children }) => {
         responsiveLayout,
         responsiveContainerSm,
         responsiveContainerLg,
+        responsiveContainerXl,
+        responsiveContainer2xl,
+        responsiveBodyTextSm,
         responsiveBodyText,
         responsiveBodyTextLg,
+        responsiveHeadingXs,
         responsiveHeadingSm,
         responsiveHeadingMd,
         responsiveHeadingLg,
         responsiveHeadingXl,
-        responsiveButtonSm,
+        // responsiveButtonSm,
         responsiveButtonMd,
         responsiveButtonLg,
         responsiveImg,
