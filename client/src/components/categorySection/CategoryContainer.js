@@ -1,21 +1,26 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import GlobalContext from '../contexts/Globals';
-import StylesContext from '../contexts/Styles';
-import { Box, Tag, Heading } from '@chakra-ui/react';
+import GlobalContext from '../../contexts/Globals';
+import StylesContext from '../../contexts/Styles';
+import { Box, Tag, Heading, useBreakpointValue } from '@chakra-ui/react';
 
 const CategoryContainer = () => {
   let { categories, setCategoryId } = useContext(GlobalContext);
-  let { responsiveHeadingSm, responsiveButtonLg } = useContext(StylesContext);
-  let navigate = useNavigate();
+  let { responsiveHeadingXs } = useContext(StylesContext);
 
+  const responsiveMargin = useBreakpointValue({
+    base: '10',
+    md: '0',
+  });
+
+  let navigate = useNavigate();
   const handleClick = id => {
     setCategoryId(id);
   };
 
   return (
-    <Box>
-      <Heading fontSize={responsiveHeadingSm} mb="3">
+    <Box pl="5" mt={responsiveMargin}>
+      <Heading fontSize={responsiveHeadingXs} mb="3">
         Categories:
       </Heading>
       {categories.map(category => (
@@ -26,11 +31,12 @@ const CategoryContainer = () => {
             handleClick(category.id);
             navigate(`/categories/${category.id}`);
           }}
-          size={responsiveButtonLg}
+          size="md"
           borderRightRadius="full"
           borderBottomLeftRadius="full"
           px="4"
-          mr="3"
+          mr="2"
+          mb="2"
         >
           {category.category}
         </Tag>

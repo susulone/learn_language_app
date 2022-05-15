@@ -22,12 +22,8 @@ const LessonCard = ({
   description,
 }) => {
   let { setLessonId } = useContext(GlobalContext);
-  let {
-    responsiveContainerSm,
-    responsiveBodyText,
-    responsiveHeadingMd,
-    responsiveButtonSm,
-  } = useContext(StylesContext);
+  let { responsiveContainerSm, responsiveBodyTextSm, responsiveHeadingMd } =
+    useContext(StylesContext);
 
   let navigate = useNavigate();
 
@@ -72,7 +68,7 @@ const LessonCard = ({
       <Flex direction="column" gap="5">
         <Divider />
         <Text
-          fontSize={responsiveBodyText}
+          fontSize={responsiveBodyTextSm}
           fontWeight="medium"
           lineHeight="tall"
         >
@@ -80,7 +76,7 @@ const LessonCard = ({
         </Text>
       </Flex>
       <Tag
-        size={responsiveButtonSm}
+        size="sm"
         mt="4"
         px="3"
         mr="2"
@@ -90,7 +86,7 @@ const LessonCard = ({
         {categoryName}
       </Tag>
       <Tag
-        size={responsiveButtonSm}
+        size="sm"
         mt="4"
         px="3"
         mr="2"

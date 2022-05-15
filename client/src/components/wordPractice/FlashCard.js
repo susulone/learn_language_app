@@ -10,7 +10,7 @@ import {
 import LangBotWithEnglishFlag from '../../assets/langbot-with-english-flag.svg';
 import LangBotWithSwedishFlag from '../../assets/langbot-with-swedish-flag.svg';
 
-const LangBotWithFlags = ({ wordInEng, wordInSwe }) => {
+const FlashCard = ({ wordInEng, wordInSwe }) => {
   const { responsiveImg } = useContext(StylesContext);
   let [showFlag, setShowFlag] = useState('English');
 
@@ -38,11 +38,11 @@ const LangBotWithFlags = ({ wordInEng, wordInSwe }) => {
           mx={responsiveMargin}
         >
           <Image
-            boxSize={responsiveImg}
+            height={responsiveImg}
             src={LangBotWithEnglishFlag}
             alt="Langbot holding up the English flag"
           />
-          <Heading size="4xl" pt="14">
+          <Heading size="3xl" pt="14">
             {wordInEng}
           </Heading>
         </Stack>
@@ -55,11 +55,11 @@ const LangBotWithFlags = ({ wordInEng, wordInSwe }) => {
           mx={responsiveMargin}
         >
           <Image
-            boxSize={responsiveImg}
+            height={responsiveImg}
             src={LangBotWithSwedishFlag}
             alt="Langbot holding up the English flag"
           />
-          <Heading size="4xl" pt="14">
+          <Heading size="3xl" pt="14">
             {wordInSwe}
           </Heading>
         </Stack>
@@ -68,4 +68,4 @@ const LangBotWithFlags = ({ wordInEng, wordInSwe }) => {
   );
 };
 
-export default LangBotWithFlags;
+export default FlashCard;

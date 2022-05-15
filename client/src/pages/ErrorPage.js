@@ -5,27 +5,18 @@ import { Button, Flex, Heading, Image, Stack } from '@chakra-ui/react';
 import SadLangBot from '../assets/langbot-404.svg';
 
 const ErrorPage = () => {
-  let { responsiveBodyTextLg, responsiveContainerLg, responsiveImg } =
+  let { responsiveBodyTextLg, responsiveContainer2xl, responsiveImg } =
     useContext(StylesContext);
   return (
     <Flex
-      maxWidth={responsiveContainerLg}
-      // border="2px" // for testing only
+      maxWidth={responsiveContainer2xl}
       direction="column"
-      justify="center"
+      justify="end"
       align="center"
-      minHeight="90vh"
+      minHeight="85vh"
       m="2"
-      border="solid"
     >
-      <Stack
-        // border="1px" // for testing only
-        direction="column"
-        align="center"
-        spacing="10"
-        pt="10"
-        width="fit-content"
-      >
+      <Stack direction="column" align="center" spacing="10" width="fit-content">
         <Stack
           direction="column"
           align="center"
@@ -47,7 +38,7 @@ const ErrorPage = () => {
         <Image
           boxSize={responsiveImg}
           src={SadLangBot}
-          alt="Langbot looking sad and saying 'we are lost, let's go back home!'"
+          alt="Langbot looking sad and saying: 'We are lost, let's go back home!'"
         />
       </Flex>
     </Flex>
