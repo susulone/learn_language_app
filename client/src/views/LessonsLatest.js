@@ -1,23 +1,30 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import GlobalContext from '../contexts/Globals';
 import StylesContext from '../contexts/Styles';
 import { Box, Flex, Heading } from '@chakra-ui/react';
 import LoadIndicator from '../components/LoadIndicator';
 import LessonCard from '../components/LessonCard';
-import CategoryContainer from '../components/CategoryContainer';
+import CategorySection from '../components/categorySection/CategorySection';
 
 const LessonsLatest = () => {
-  let { contentIsLoading, lessons } = useContext(GlobalContext);
-
-  const { responsiveContainerSm, responsiveHeadingLg, responsiveLayout } =
+  let { contentIsLoading, lessons, setCategoryImage } =
+    useContext(GlobalContext);
+  const { responsiveContainerSm, responsiveHeadingLg } =
     useContext(StylesContext);
+
+  useEffect(() => {
+    function updateLangbotImg() {
+      setCategoryImage('lessons');
+    }
+    updateLangbotImg();
+  }, []);
 
   return (
     <Flex
       direction="column"
       align="center"
       textAlign="left"
-      // border="solid"   // for testing only
+      border="solid" // for testing only
     >
       <Box
         width={responsiveContainerSm}
@@ -47,15 +54,7 @@ const LessonsLatest = () => {
             />
           ))}
       </Box>
-      <Box
-        width={responsiveContainerSm}
-        direction={responsiveLayout}
-        mt="10"
-        pl="5"
-        // border="solid"   // for testing only
-      >
-        <CategoryContainer />
-      </Box>
+      <CategorySection />
     </Flex>
   );
 };
