@@ -36,7 +36,7 @@ const ErrorPage = () => {
       </Stack>
       <Flex width="100%" justify="right" mt="16">
         <Image
-          boxSize={responsiveImg}
+          height={responsiveImg}
           src={SadLangBot}
           alt="Langbot looking sad and saying: 'We are lost, let's go back home!'"
         />
