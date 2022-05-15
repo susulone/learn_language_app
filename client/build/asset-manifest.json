@@ -1,12 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.784d1244.css",
-    "main.js": "/static/js/main.44d3e36a.js",
+    "main.js": "/static/js/main.a7b51ffc.js",
     "static/js/377.b33aecdb.chunk.js": "/static/js/377.b33aecdb.chunk.js",
+    "static/media/langbot-search.svg": "/static/media/langbot-search.83fdfcd92becc213a937a4ccf5bcc6ba.svg",
     "static/media/roboto-mono-all-500-normal.woff": "/static/media/roboto-mono-all-500-normal.90ffb4a191df0ec65dd5.woff",
     "static/media/roboto-mono-all-400-normal.woff": "/static/media/roboto-mono-all-400-normal.8c12dec86f8b17eac652.woff",
-    "static/media/langbot-404.svg": "/static/media/langbot-404.51d7144956767b2b4b7fa766aee3e690.svg",
+    "static/media/langbot-404.svg": "/static/media/langbot-404.a884e23434ab3358ce955e271cb23a40.svg",
     "static/media/space-mono-all-700-normal.woff": "/static/media/space-mono-all-700-normal.2b7ff8f5053228c6bfa1.woff",
+    "static/media/langbot-lesson.svg": "/static/media/langbot-lesson.298b510148798e07207408be4c85529d.svg",
     "static/media/space-mono-latin-700-normal.woff2": "/static/media/space-mono-latin-700-normal.abaf4f58553bbd53c62f.woff2",
     "static/media/langbot-with-english-flag.svg": "/static/media/langbot-with-english-flag.05e149fcd7f6e0dec872e5e6ad4d1318.svg",
     "static/media/space-mono-latin-ext-700-normal.woff2": "/static/media/space-mono-latin-ext-700-normal.d4faaf1411928a51a37a.woff2",
@@ -26,11 +28,11 @@
     "static/media/roboto-mono-vietnamese-400-normal.woff2": "/static/media/roboto-mono-vietnamese-400-normal.baa5de8fd025f9a570c0.woff2",
     "index.html": "/index.html",
     "main.784d1244.css.map": "/static/css/main.784d1244.css.map",
-    "main.44d3e36a.js.map": "/static/js/main.44d3e36a.js.map",
+    "main.a7b51ffc.js.map": "/static/js/main.a7b51ffc.js.map",
     "377.b33aecdb.chunk.js.map": "/static/js/377.b33aecdb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.784d1244.css",
-    "static/js/main.44d3e36a.js"
+    "static/js/main.a7b51ffc.js"
   ]
 }

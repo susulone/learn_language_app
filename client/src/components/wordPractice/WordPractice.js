@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import GlobalContext from '../../contexts/Globals';
 import StylesContext from '../../contexts/Styles';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
-import LangBotWithFlags from './LangbotWithFlags';
+import FlashCard from './FlashCard';
 
 const WordPractice = () => {
   let { wordPairs } = useContext(GlobalContext);
@@ -25,7 +25,7 @@ const WordPractice = () => {
       <TabPanels>
         {wordPairs.map(wordPair => (
           <TabPanel key={wordPair.id}>
-            <LangBotWithFlags
+            <FlashCard
               wordInEng={wordPair.eng_word}
               wordInSwe={wordPair.swe_word}
             />
