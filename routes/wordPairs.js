@@ -1,24 +1,24 @@
 const express = require("express");
 const router = express.Router();
-const controllers = require("../controllers/lessonControllers");
+const controllers = require("../controllers/wordPairControllers");
 
 router.get("/", async (req, res) => {
 	try {
-		let allLessons = await controllers.getAll();
-		return res.status(200).send(allLessons);
+		let allWordMatches = await controllers.getAll();
+		res.status(200).send(allWordMatches);
 	} catch (err) {
-		return res.status(500).end(err);
+		res.status(500).end(err);
 	}
 });
 
 router.get("/:id([0-9]+)", async (req, res) => {
 	const id = +req.params.id;
 	try {
-		let resultById = await controllers.getById(id);
-		if (resultById === null) {
+		let pairsById = await controllers.getById(id);
+		if (pairsById === false) {
 			res.status(404).end();
 		} else {
-			res.status(200).send(resultById);
+			res.status(200).send(pairsById);
 		}
 	} catch (err) {
 		res.status(500).end(err);
@@ -40,21 +40,26 @@ router.delete("/:id([0-9]+)", async (req, res) => {
 });
 
 router.post("/", async (reg, res) => {
-	let newLesson = reg.body;
+	let newPair = reg.body;
 	try {
-		let createdLesson = await controllers.add(newLesson);
-		res.status(201).send(createdLesson);
+		let savedPair = await controllers.add(newPair);
+		res.status(201).send(savedPair);
 	} catch (err) {
 		res.status(500).end(err);
 	}
 });
 
-router.get("/with-category-name", async (req, res) => {
+router.get("/from-lesson/:id([0-9]+)", async (req, res) => {
+	const lessonId = +req.params.id;
 	try {
-		let allLessons = await controllers.getAllWithCategoryNames();
-		return res.status(200).send(allLessons);
+		let pairsByLessonId = await controllers.getByLesson(lessonId);
+		if (pairsByLessonId === false) {
+			res.status(404).end();
+		} else {
+			res.status(200).send(pairsByLessonId);
+		}
 	} catch (err) {
-		return res.status(500).end(err);
+		res.status(500).end(err);
 	}
 });
 
