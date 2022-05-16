@@ -1,29 +1,17 @@
-http://localhost:8080/api/lessons/
+GET http://localhost:8080/api/lessons/
 
 ###
-
-http://localhost:8080/api/lessons/1
-
-###
-
-http://localhost:8080/api/categories/
+GET http://localhost:8080/api/lessons/1
 
 ###
-
-http://localhost:8080/api/categories/1
-
-###
-
-http://localhost:8080/api/words/swe
+GET http://localhost:8080/api/categories/
 
 ###
+GET http://localhost:8080/api/categories/1
 
-http://localhost:8080/api/words/eng
+
+### LANGUAGES ###
+GET http://localhost:8080/api/lang/
 
 ###
-
-http://localhost:8080/api/words/all-matches
-
-###
-
-http://localhost:8080/api/words/by-lesson-id/1
+GET http://localhost:8080/api/lang/2

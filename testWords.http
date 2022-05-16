@@ -1,0 +1,34 @@
+
+### SWEDISH WORDS ###
+GET http://localhost:8080/api/swe
+
+###
+GET http://localhost:8080/api/swe/22
+
+###
+DELETE http://localhost:8080/api/swe/35
+
+###
+POST http://localhost:8080/api/swe/
+Content-type: application/json
+
+{ "word": "hello", "language_id": 2}
+
+###
+
+### ENGLISH WORDS ###
+GET http://localhost:8080/api/eng
+
+###
+GET http://localhost:8080/api/eng/5
+
+###
+DELETE http://localhost:8080/api/eng/22
+
+###
+POST http://localhost:8080/api/eng/
+Content-type: application/json
+
+{ "word": "hello", "language_id": 1}
+
+###

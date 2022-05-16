@@ -1,0 +1,16 @@
+GET http://localhost:8080/api/lessons/
+
+###
+GET http://localhost:8080/api/lessons/1
+
+###
+DELETE http://localhost:8080/api/lessons/4
+
+###
+POST http://localhost:8080/api/lessons/
+Content-type: application/json
+
+{ "title": "text", "description": "text", "body": "text", "category_id": 2}
+
+###
+GET http://localhost:8080/api/lessons/with-category-name/

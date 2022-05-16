@@ -1,0 +1,16 @@
+GET http://localhost:8080/api/categories/
+
+###
+GET http://localhost:8080/api/categories/1
+
+### Not yet available
+# DELETE http://localhost:8080/api/categories/3
+
+### Not yet available
+# POST http://localhost:8080/api/categories/
+# Content-type: application/json
+
+# { "category": "ordinal numbers", "parent_id": 1}
+
+### This will need to be edited to take multiple params when the POST is enabled
+GET http://localhost:8080/api/categories/with-parents/1
