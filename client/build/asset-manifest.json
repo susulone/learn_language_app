@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.784d1244.css",
-    "main.js": "/static/js/main.a7b51ffc.js",
+    "main.js": "/static/js/main.cf50d7a2.js",
     "static/js/377.b33aecdb.chunk.js": "/static/js/377.b33aecdb.chunk.js",
     "static/media/langbot-search.svg": "/static/media/langbot-search.83fdfcd92becc213a937a4ccf5bcc6ba.svg",
     "static/media/roboto-mono-all-500-normal.woff": "/static/media/roboto-mono-all-500-normal.90ffb4a191df0ec65dd5.woff",
@@ -17,6 +17,11 @@
     "static/media/roboto-mono-latin-500-normal.woff2": "/static/media/roboto-mono-latin-500-normal.c1f17364fee75703a7ee.woff2",
     "static/media/roboto-mono-latin-400-normal.woff2": "/static/media/roboto-mono-latin-400-normal.535bc89d4af715503b01.woff2",
     "static/media/langbot-with-swedish-flag.svg": "/static/media/langbot-with-swedish-flag.e28b58809a26e822adc03682a11d24c9.svg",
+    "static/media/langbot-score-100.svg": "/static/media/langbot-score-100.cb2d4081734a79ad03e9391cc3b35913.svg",
+    "static/media/langbot-score-80.svg": "/static/media/langbot-score-80.fc442787ac71e6c5d72ebc93bca4087f.svg",
+    "static/media/langbot-score-50.svg": "/static/media/langbot-score-50.836227f3efed0eb574a40c54c78cd8f9.svg",
+    "static/media/langbot-score-30.svg": "/static/media/langbot-score-30.06ecd2a7bcff695eb369b2be7e47155a.svg",
+    "static/media/langbot-score-0.svg": "/static/media/langbot-score-0.41a66d0576009904a718f792a9aa3d6f.svg",
     "static/media/roboto-mono-latin-ext-500-normal.woff2": "/static/media/roboto-mono-latin-ext-500-normal.92110b346c4396ad9016.woff2",
     "static/media/roboto-mono-latin-ext-400-normal.woff2": "/static/media/roboto-mono-latin-ext-400-normal.52237f44c81dd66b90e3.woff2",
     "static/media/roboto-mono-cyrillic-500-normal.woff2": "/static/media/roboto-mono-cyrillic-500-normal.75b7fbfdecae5afc9929.woff2",
@@ -28,11 +33,11 @@
     "static/media/roboto-mono-vietnamese-400-normal.woff2": "/static/media/roboto-mono-vietnamese-400-normal.baa5de8fd025f9a570c0.woff2",
     "index.html": "/index.html",
     "main.784d1244.css.map": "/static/css/main.784d1244.css.map",
-    "main.a7b51ffc.js.map": "/static/js/main.a7b51ffc.js.map",
+    "main.cf50d7a2.js.map": "/static/js/main.cf50d7a2.js.map",
     "377.b33aecdb.chunk.js.map": "/static/js/377.b33aecdb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.784d1244.css",
-    "static/js/main.a7b51ffc.js"
+    "static/js/main.cf50d7a2.js"
   ]
 }
