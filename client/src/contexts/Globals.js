@@ -12,7 +12,7 @@ export const GlobalProvider = ({ children }) => {
   let [lessons, setLessons] = useState([]);
   useEffect(() => {
     async function getLessons() {
-      let response = await axios.get('/api/lessons/');
+      let response = await axios.get('/api/lessons/with-category-name/');
       let data = await response.data;
       setLessons(data);
       setContentIsLoading(false);
@@ -47,7 +47,9 @@ export const GlobalProvider = ({ children }) => {
   let [category, setCategory] = useState([]);
   useEffect(() => {
     async function getCategoryById() {
-      let response = await axios.get(`/api/categories/${categoryId}`);
+      let response = await axios.get(
+        `/api/categories/with-parents/${categoryId}`
+      );
       let data = await response.data;
       setCategory(data);
     }
@@ -57,12 +59,41 @@ export const GlobalProvider = ({ children }) => {
   let [wordPairs, setWordPairs] = useState([]);
   useEffect(() => {
     async function getWordPairsByLessonId() {
-      let response = await axios.get(`/api/words/by-lesson-id/${lessonId}`);
+      let response = await axios.get(`/api/pairs/from-lesson/${lessonId}`);
       let data = await response.data;
       setWordPairs(data);
+      setMaxScore(data.length);
     }
     getWordPairsByLessonId();
   }, [lessonId]);
+
+  let [quizState, setQuizState] = useState('menu');
+  let [quizLanguage, setQuizLanguage] = useState('');
+  let [maxScore, setMaxScore] = useState(0);
+  let [score, setScore] = useState(0);
+  let usersAnswers = [];
+
+  let [languages, setLanguages] = useState([]);
+  useEffect(() => {
+    async function getLanguages() {
+      let response = await axios.get('/api/lang/');
+      let data = await response.data;
+      setLanguages(data);
+    }
+    getLanguages();
+  }, []);
+
+  let [languageId, setLanguageId] = useState(1);
+
+  let [language, setLanguage] = useState([]);
+  useEffect(() => {
+    async function getLanguageById() {
+      let response = await axios.get(`/api/lang/${languageId}`);
+      let data = await response.data;
+      setLanguage(data);
+    }
+    getLanguageById();
+  }, [languageId]);
 
   return (
     <GlobalContext.Provider
@@ -87,6 +118,21 @@ export const GlobalProvider = ({ children }) => {
         setCategory,
         wordPairs,
         setWordPairs,
+        quizState,
+        setQuizState,
+        maxScore,
+        setMaxScore,
+        score,
+        setScore,
+        quizLanguage,
+        setQuizLanguage,
+        usersAnswers,
+        languages,
+        setLanguages,
+        languageId,
+        setLanguageId,
+        language,
+        setLanguage,
       }}
     >
       {children}

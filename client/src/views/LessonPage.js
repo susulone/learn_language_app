@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import GlobalContext from '../contexts/Globals';
 import StylesContext from '../contexts/Styles';
 import {
@@ -21,6 +22,8 @@ const LessonPage = () => {
     responsiveHeadingMd,
     responsiveHeadingLg,
   } = useContext(StylesContext);
+
+  let navigate = useNavigate();
 
   return (
     <Flex direction="column" align="center" textAlign="left" m="2" p="2">
@@ -56,7 +59,9 @@ const LessonPage = () => {
             </Heading>
             <IconButton
               aria-label="Go to quiz"
-              onClick={() => {}}
+              onClick={() => {
+                navigate(`/lessons/quiz`);
+              }}
               variant="link"
               fontSize="4xl"
               icon={<FiArrowRightCircle />}

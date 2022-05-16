@@ -51,7 +51,7 @@ const LessonCard = ({
           {title}
         </Heading>
         <IconButton
-          aria-label="Go to quiz"
+          aria-label="Go to lesson"
           onClick={() => {
             handleClick();
             navigate(`/lessons/${id}`);

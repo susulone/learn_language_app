@@ -24,7 +24,7 @@ const LessonsLatest = () => {
       direction="column"
       align="center"
       textAlign="left"
-      border="solid" // for testing only
+      // border="solid" // for testing only
     >
       <Box
         width={responsiveContainerSm}

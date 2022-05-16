@@ -11,6 +11,7 @@ import Lessons from './pages/Lessons';
 import LessonsLatest from './views/LessonsLatest';
 import LessonPage from './views/LessonPage';
 import Search from './pages/Search';
+import QuizView from './views/QuizView';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="/lessons" element={<Lessons />}>
                 <Route path="latest" element={<LessonsLatest />} />
                 <Route path=":lessonId" element={<LessonPage />} />
+                <Route path="quiz" element={<QuizView />} />
               </Route>
               <Route path="/about" element={<About />} />
               <Route path="/search" element={<Search />} />
