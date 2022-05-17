@@ -1,0 +1,5 @@
+
+GET http://localhost:8080/api/lang/
+
+###
+GET http://localhost:8080/api/lang/2

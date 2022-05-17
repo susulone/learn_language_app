@@ -12,7 +12,7 @@ DELETE http://localhost:8080/api/swe/35
 POST http://localhost:8080/api/swe/
 Content-type: application/json
 
-{ "word": "hello", "language_id": 2}
+{ "word": "elva" }
 
 ###
 
@@ -29,6 +29,8 @@ DELETE http://localhost:8080/api/eng/22
 POST http://localhost:8080/api/eng/
 Content-type: application/json
 
-{ "word": "hello", "language_id": 1}
+{ "word": "eleven" }
 
 ###
+
+GET http://localhost:8080/api/eng/match-by/1

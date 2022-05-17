@@ -13,6 +13,6 @@ Content-type: application/json
 { "language1_id": 1, "language1_word_id": 12, "language2_id": 2, "language2_word_id": 12, "lesson_id": 1}
 
 ###
-GET http://localhost:8080/api/pairs/from-lesson/1
+GET http://localhost:8080/api/pairs/from-lesson/2
 
 
