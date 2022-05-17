@@ -81,10 +81,10 @@ export const StylesProvider = ({ children }) => {
     lg: '5xl',
   });
 
-  // const responsiveButtonSm = useBreakpointValue({
-  //   sm: 'sm',
-  //   md: 'md',
-  // });
+  const responsiveButtonSm = useBreakpointValue({
+    sm: 'sm',
+    md: 'md',
+  });
 
   const responsiveButtonMd = useBreakpointValue({
     sm: 'sm',
@@ -117,7 +117,7 @@ export const StylesProvider = ({ children }) => {
         responsiveHeadingMd,
         responsiveHeadingLg,
         responsiveHeadingXl,
-        // responsiveButtonSm,
+        responsiveButtonSm,
         responsiveButtonMd,
         responsiveButtonLg,
         responsiveImg,

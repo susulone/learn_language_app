@@ -2,6 +2,8 @@ import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react';
+import GlobalContext, { GlobalProvider } from './contexts/Globals';
+import { StylesProvider } from './contexts/Styles';
 import App from './App';
 
 import theme from './styles/ThemeCustomization';
@@ -15,7 +17,11 @@ const root = createRoot(container);
 root.render(
   <StrictMode>
     <ChakraProvider theme={theme}>
-      <App />
+      <GlobalProvider>
+        <StylesProvider>
+          <App />
+        </StylesProvider>
+      </GlobalProvider>
     </ChakraProvider>
   </StrictMode>
 );

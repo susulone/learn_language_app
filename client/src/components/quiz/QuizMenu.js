@@ -9,7 +9,8 @@ import LangBotWithSwedishFlag from '../../assets/langbot-with-swedish-flag.svg';
 const QuizMenu = () => {
   let { setQuizState, language, setLanguageId, languageId } =
     useContext(GlobalContext);
-  const { responsiveContainerLg, responsiveImg } = useContext(StylesContext);
+  const { responsiveContainerLg, responsiveHeadingLg, responsiveImg } =
+    useContext(StylesContext);
 
   const handleClick = () => {
     if (languageId === 1) {
@@ -22,12 +23,7 @@ const QuizMenu = () => {
   return (
     <Flex direction="column" justify="center" m="2" p="2" textAlign="left">
       <Box width={responsiveContainerLg} direction="column" p="4">
-        <Heading
-          as="h2"
-          maxWidth="80%"
-          fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}
-          py="4"
-        >
+        <Heading as="h2" maxWidth="80%" fontSize={responsiveHeadingLg} py="4">
           I want to test myself on {language.language.toUpperCase()} words
         </Heading>
         <Flex onClick={handleClick} justify="center" mt="3">

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import GlobalContext from '../../contexts/Globals';
 import StylesContext from '../../contexts/Styles';
 import {
   IconButton,
@@ -14,6 +15,7 @@ import { HiMenu } from 'react-icons/hi';
 
 const MenuButton = () => {
   let { responsiveHeadingXl } = useContext(StylesContext);
+  let { userRole } = useContext(GlobalContext);
   return (
     <Menu>
       <MenuBtn
@@ -36,6 +38,20 @@ const MenuButton = () => {
             <Link to="/search"> Search </Link>
           </MenuItem>
         </MenuGroup>
+        {userRole === 'teacher' && (
+          <MenuGroup>
+            <MenuDivider />
+            <MenuItem fontWeight={'semibold'}>
+              <Link to="/add/lessons">Add Lessons</Link>
+            </MenuItem>
+            <MenuItem fontWeight={'semibold'}>
+              <Link to="/add/words"> Add Words </Link>
+            </MenuItem>
+            <MenuItem fontWeight={'semibold'}>
+              <Link to="/add/matches"> Add Word Pairs </Link>
+            </MenuItem>
+          </MenuGroup>
+        )}
       </MenuList>
     </Menu>
   );
