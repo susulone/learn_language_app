@@ -14,3 +14,16 @@ Content-type: application/json
 
 ###
 GET http://localhost:8080/api/lessons/with-category-name/
+
+###
+
+GET http://localhost:8080/api/lessons/edit/14
+
+###
+
+// does not work WHY THE HELL?! GETS 404
+PUT http://localhost:8080/api/lessons/2
+Content-type: application/json
+
+{ "id": 2, "title": "kerta4", "description": "tätä on muokattu taas", "category_id": 2}
+

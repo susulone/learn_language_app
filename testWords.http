@@ -1,36 +1,84 @@
 
-### SWEDISH WORDS ###
-GET http://localhost:8080/api/swe
+// Get both eng and swe words
+GET http://localhost:8080/api/words/
 
 ###
-GET http://localhost:8080/api/swe/22
 
-###
-DELETE http://localhost:8080/api/swe/35
-
-###
-POST http://localhost:8080/api/swe/
+// Add new word pair
+POST http://localhost:8080/api/words/
 Content-type: application/json
 
-{ "word": "elva" }
+{ "eng_word": "eleven", "swe_word": "elva", "lesson_id": 2}
 
 ###
+
+// Get both words by id
+GET http://localhost:8080/api/words/2
+
+###
+
+// Delete word pair by id
+DELETE http://localhost:8080/api/words/13
+
+###
+
+// Update word pair
+PUT http://localhost:8080/api/words/edit/1
+Content-type: application/json
+
+{"engWord": "zero", "sweWord": "noll", "lessonId": 1}
+
+###
+
+// Update only one word
+PUT http://localhost:8080/api/words/1
+Content-type: application/json
+
+{"swe_word": "nolla"}
+
+###
+
+
+PATCH http://localhost:8080/api/words/edit/1
+Content-Type: application/json
+
+[{ "op": "replace", "path": "longitude", "value": 15 }]
+
+###
+
+// Get words by their lessons
+GET http://localhost:8080/api/words/lesson3
+
+
+
+
+### SWEDISH WORDS ###
+
+// Get all swedish words
+GET http://localhost:8080/api/words/swe
+
+###
+
+// Get swedish word by id
+GET http://localhost:8080/api/words/swe/12
+
+###
+
+// Get swedish words by lesson id
+GET http://localhost:8080/api/words/swe/lesson1
+
 
 ### ENGLISH WORDS ###
-GET http://localhost:8080/api/eng
 
-###
-GET http://localhost:8080/api/eng/5
-
-###
-DELETE http://localhost:8080/api/eng/22
-
-###
-POST http://localhost:8080/api/eng/
-Content-type: application/json
-
-{ "word": "eleven" }
+// Get all english words
+GET http://localhost:8080/api/words/eng
 
 ###
 
-GET http://localhost:8080/api/eng/match-by/1
+// get english word by id
+GET http://localhost:8080/api/words/eng/12
+
+###
+
+// Get swedish words by lesson id
+GET http://localhost:8080/api/words/eng/lesson1
