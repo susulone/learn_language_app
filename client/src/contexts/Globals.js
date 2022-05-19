@@ -14,26 +14,34 @@ export const GlobalProvider = ({ children }) => {
   let [lessonId, setLessonId] = useState(1);
 
   // this function runs right at the beginning, does this have a better place to be?
-  // useEffect(() => {
-  //   async function getLessonById() {
-  //     let response = await axios.get(`/api/lessons/${lessonId}`);
-  //     let data = await response.data;
-  //     setLesson(data);
-  //     console.log('getLessonById ran');
-  //   }
-  //   getLessonById();
-  // }, [lessonId]);
+  useEffect(() => {
+    async function getLessonById() {
+      try {
+        let response = await axios.get(`/api/lessons/${lessonId}`);
+        let data = await response.data;
+        setLesson(data);
+        console.log('getLessonById ran');
+      } catch (err) {
+        console.log(err.response);
+      }
+    }
+    getLessonById();
+  }, [lessonId]);
 
-  // useEffect(() => {
-  //   async function getLessons() {
-  //     let response = await axios.get('/api/lessons/with-category-name/');
-  //     let data = await response.data;
-  //     setLessons(data);
-  //     setContentIsLoading(false);
-  //     console.log('getLessons ran');
-  //   }
-  //   getLessons();
-  // }, [lesson]);
+  useEffect(() => {
+    async function getLessons() {
+      try {
+        let response = await axios.get('/api/lessons/with-category-name/');
+        let data = await response.data;
+        setLessons(data);
+        setContentIsLoading(false);
+        console.log('getLessons ran');
+      } catch (err) {
+        console.log(err.response);
+      }
+    }
+    getLessons();
+  }, [lesson]);
 
   let [title, setTitle] = useState('');
   let [description, setDescription] = useState('');
@@ -76,19 +84,6 @@ export const GlobalProvider = ({ children }) => {
   }, [categoryId]);
 
   let [sweWords, setSweWords] = useState([]);
-  // useEffect(() => {
-  //   async function getAllSweWords() {
-  //     try {
-  //       let response = await axios.get(`/api/swe`);
-  //       let data = await response.data;
-  //       setSweWords(data);
-  //     } catch (err) {
-  //       console.log(err.response);
-  //     }
-  //   }
-  //   getAllSweWords();
-  // }, []);
-
   useEffect(() => {
     async function getAllSweWords() {
       try {
@@ -103,19 +98,6 @@ export const GlobalProvider = ({ children }) => {
   }, [allWordMatches, sweWords]);
 
   let [engWords, setEngWords] = useState([]);
-  // useEffect(() => {
-  //   async function getAllEngWords() {
-  //     try {
-  //       let response = await axios.get(`/api/eng`);
-  //       let data = await response.data;
-  //       setEngWords(data);
-  //     } catch (err) {
-  //       console.log(err.response);
-  //     }
-  //   }
-  //   getAllEngWords();
-  // }, []);
-
   useEffect(() => {
     async function getAllEngWords() {
       try {
@@ -128,20 +110,6 @@ export const GlobalProvider = ({ children }) => {
     }
     getAllEngWords();
   }, [allWordMatches, engWords]);
-
-  // let [allWordMatches, setAllWordMatches] = useState([]);
-  // useEffect(() => {
-  //   async function getAllWordMatches() {
-  //     try {
-  //       let response = await axios.get(`/api/pairs/`);
-  //       let data = await response.data;
-  //       setAllWordMatches(data);
-  //     } catch (err) {
-  //       console.log(err.response);
-  //     }
-  //   }
-  //   getAllWordMatches();
-  // }, []);
 
   let [wordMatchId, setWordMatchId] = useState(null);
 
@@ -164,24 +132,6 @@ export const GlobalProvider = ({ children }) => {
   let [availability, setAvailability] = useState(null);
   let [maxScore, setMaxScore] = useState(0);
   let [score, setScore] = useState(0);
-  // useEffect(() => {
-  //   async function getWordPairsByLessonId() {
-  //     try {
-  //       let response = await axios.get(`/api/pairs/from-lesson/${lessonId}`);
-  //       if (response && response.data) {
-  //         let data = await response.data;
-  //         setWordPairs(data);
-  //         setMaxScore(data.length);
-  //         setAvailability(true);
-  //       }
-  //     } catch (err) {
-  //       if (err.response.data === false) {
-  //         setAvailability(false);
-  //       }
-  //     }
-  //   }
-  //   getWordPairsByLessonId();
-  // }, [lessonId]);
 
   // useEffect(() => {
   //   async function getWordMatchesByLessonId() {

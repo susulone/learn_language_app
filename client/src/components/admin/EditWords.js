@@ -39,13 +39,7 @@ const EditWords = () => {
     lessons,
     setWordMatch,
     setAllWordMatches,
-    setEngWord,
-    setId,
-    setLesson_id,
-    setSweWord,
-    setWordMatches,
     setWordMatchId,
-    wordMatch,
     wordMatchId,
     wordMatches,
   } = useContext(GlobalContext);
@@ -146,39 +140,6 @@ const EditWords = () => {
       console.log(err.response);
     }
   };
-
-  //   const handleSubmit = async e => {
-  //     e.preventDefault();
-  //     const newWordPair = {
-  //       eng_word: engWord,
-  //       swe_word: sweWord,
-  //       lesson_id: lesson_id,
-  //     };
-  //     try {
-  //       const newWordPairRes = await axios.post('/api/words', newWordPair);
-  //       const updatedWords = [...wordMatches, newWordPairRes.data];
-  //       setWordMatches(updatedWords);
-  //       setSweWord('');
-  //       setEngWord('');
-
-  //       toast({
-  //         title: 'Words added.',
-  //         description: 'The words have been added to the database.',
-  //         duration: 9000,
-  //         isClosable: true,
-  //       });
-  //       navigate('/admin/words');
-  //     } catch (err) {
-  //       if (err.response) {
-  //         // Not in the 200 response range
-  //         console.log(err.response.data);
-  //         console.log(err.response.status);
-  //         console.log(err.response.headers);
-  //       } else {
-  //         console.log(`Error: ${err.message}`);
-  //       }
-  //     }
-  //   };
 
   return (
     <Flex justify="center" textAlign="left">
