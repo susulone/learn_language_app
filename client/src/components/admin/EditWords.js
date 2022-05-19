@@ -58,7 +58,6 @@ const EditWords = () => {
         let response = await axios.get(`/api/words/${wordMatchId}`);
         let data = await response.data;
         setWordMatch(data);
-        console.log(data);
         setEditEngWord(data.eng_word);
         setEditSweWord(data.swe_word);
         setEditLesson_id(data.lesson_id);
@@ -66,7 +65,7 @@ const EditWords = () => {
         console.log(err.response);
       }
     }
-    console.log('getWordMatchById - edit ran');
+    // console.log('getWordMatchById - edit ran');
     getWordMatchById();
   }, [wordMatchId]);
 
@@ -81,15 +80,13 @@ const EditWords = () => {
   const handleEdit = async e => {
     e.preventDefault();
     const editedWordMatch = {
-      id: id,
       eng_word: editEngWord,
       swe_word: editSweWord,
       lesson_id: editLesson_id,
     };
-    console.log(editedWordMatch);
     try {
       const response = await axios.put(
-        `/api/words/${wordMatchId}`,
+        `/api/words/edit/${wordMatchId}`,
         editedWordMatch
       );
       setAllWordMatches(

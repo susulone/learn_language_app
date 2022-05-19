@@ -147,7 +147,6 @@ router.get("/lesson:id([0-9]+)", async (req, res) => {
 });
 router.put("/edit/:id([0-9]+)", async (req, res) => {
 	const id = +req.params.id;
-	// const bodyId = req.body.id;
 	const eng_word = req.body.eng_word;
 	const swe_word = req.body.swe_word;
 	const lesson_id = req.body.lesson_id;

@@ -26,7 +26,7 @@ DELETE http://localhost:8080/api/words/13
 PUT http://localhost:8080/api/words/edit/1
 Content-type: application/json
 
-{"eng_word": "meni", "swe_word": "läpi", "lesson_id": 1}
+{"eng_word": "zero", "swe_word": "noll", "lesson_id": 1}
 
 ###
 
@@ -39,17 +39,8 @@ Content-type: application/json
 ###
 
 
-PATCH http://localhost:8080/api/words/edit/1
-Content-Type: application/json
-
-[{ "op": "replace", "path": "longitude", "value": 15 }]
-
-###
-
 // Get words by their lessons
 GET http://localhost:8080/api/words/lesson3
-
-
 
 
 ### SWEDISH WORDS ###
