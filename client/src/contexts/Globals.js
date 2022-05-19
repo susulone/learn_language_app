@@ -20,11 +20,11 @@ export const GlobalProvider = ({ children }) => {
         let response = await axios.get(`/api/lessons/${lessonId}`);
         let data = await response.data;
         setLesson(data);
-        console.log('getLessonById ran');
       } catch (err) {
         console.log(err.response);
       }
     }
+    console.log('getLessonById ran');
     getLessonById();
   }, [lessonId]);
 
@@ -35,11 +35,11 @@ export const GlobalProvider = ({ children }) => {
         let data = await response.data;
         setLessons(data);
         setContentIsLoading(false);
-        console.log('getLessons ran');
       } catch (err) {
         console.log(err.response);
       }
     }
+    console.log('getLessons ran');
     getLessons();
   }, [lesson]);
 
@@ -62,6 +62,7 @@ export const GlobalProvider = ({ children }) => {
         console.log(err.response);
       }
     }
+    console.log('getCategories ran');
     getCategories();
   }, []);
 
@@ -80,6 +81,7 @@ export const GlobalProvider = ({ children }) => {
         console.log(err.response);
       }
     }
+    console.log('getCategoryById ran');
     getCategoryById();
   }, [categoryId]);
 
@@ -125,6 +127,7 @@ export const GlobalProvider = ({ children }) => {
         console.log(err.response);
       }
     }
+    console.log('getAllWordMatches ran');
     getAllWordMatches();
   }, []);
 
@@ -168,8 +171,10 @@ export const GlobalProvider = ({ children }) => {
         }
       }
     }
+    console.log('getSweWordByLessonId ran');
     getSweWordByLessonId();
-  }, [lessonId]);
+  }, []);
+  // [lessonId]
 
   let [engByLesson, setEngByLesson] = useState([]);
   useEffect(() => {
@@ -186,8 +191,10 @@ export const GlobalProvider = ({ children }) => {
         }
       }
     }
+    console.log('getEngWordByLessonId ran');
     getEngWordByLessonId();
-  }, [lessonId]);
+  }, []);
+  // [lessonId]
 
   let [quizState, setQuizState] = useState('menu');
   let [quizLanguage, setQuizLanguage] = useState('');
@@ -203,6 +210,7 @@ export const GlobalProvider = ({ children }) => {
         console.log(err.response);
       }
     }
+    console.log('getLanguages ran');
     getLanguages();
   }, []);
 
@@ -218,6 +226,7 @@ export const GlobalProvider = ({ children }) => {
         console.log(err.response);
       }
     }
+    console.log('getLanguageById ran');
     getLanguageById();
   }, [languageId]);
 

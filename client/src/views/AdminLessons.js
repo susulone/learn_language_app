@@ -20,8 +20,8 @@ const AdminLessons = () => {
       let data = await response.data;
       setLessons(data);
       setContentIsLoading(false);
-      console.log('getLesson ran');
     }
+    console.log('getLesson (from AdminLessons) ran');
     getLessons();
   }, [lesson]);
 

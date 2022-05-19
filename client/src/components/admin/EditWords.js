@@ -59,7 +59,6 @@ const EditWords = () => {
         let data = await response.data;
         setWordMatch(data);
         console.log(data);
-        console.log('getWordMatchById to edit');
         setEditEngWord(data.eng_word);
         setEditSweWord(data.swe_word);
         setEditLesson_id(data.lesson_id);
@@ -67,6 +66,7 @@ const EditWords = () => {
         console.log(err.response);
       }
     }
+    console.log('getWordMatchById - edit ran');
     getWordMatchById();
   }, [wordMatchId]);
 

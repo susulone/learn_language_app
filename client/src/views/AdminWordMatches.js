@@ -37,7 +37,6 @@ const AdminWords = () => {
 
         let engResponse = await axios.get(`/api/words/eng`);
         let endData = await engResponse.data;
-        console.log('getWords ran');
         setEngWords(endData);
         setContentIsLoading(false);
       } catch (err) {
@@ -45,6 +44,7 @@ const AdminWords = () => {
         console.log(err.engResponse);
       }
     }
+    console.log('getWords (from AdminWordMatches) ran');
     getWords();
   }, []);
 

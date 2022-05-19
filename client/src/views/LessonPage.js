@@ -45,7 +45,6 @@ const LessonPage = id => {
         let response = await axios.get(`/api/words/lesson${lessonId}`);
         if (response && response.data) {
           let data = await response.data;
-          console.log('getWordMatchesByLessonId ran');
           setMatchesByLesson(data);
           setMaxScore(data.length);
           setAvailability(true);
@@ -56,6 +55,7 @@ const LessonPage = id => {
         }
       }
     }
+    console.log('getWordMatchesByLessonId ran');
     getWordMatchesByLessonId();
   }, [lessonId]);
 

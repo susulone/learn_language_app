@@ -49,7 +49,6 @@ const EditLesson = () => {
         let response = await axios.get(`/api/lessons/${lessonId}`);
         let data = await response.data;
         setLesson(data);
-        console.log('getLessonById to edit');
         setEditTitle(data.title);
         setEditDescription(data.description);
         setEditCategory_id(data.category_id);
@@ -57,6 +56,7 @@ const EditLesson = () => {
         console.log(err.response);
       }
     }
+    console.log('getLessonById - edit ran');
     getLessonById();
   }, [lessonId]);
 
