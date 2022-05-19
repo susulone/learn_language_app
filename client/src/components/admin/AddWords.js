@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import GlobalContext from '../../contexts/Globals';
@@ -12,6 +12,7 @@ import {
   FormLabel,
   Heading,
   Input,
+  Select,
   Text,
   useToast,
 } from '@chakra-ui/react';
@@ -23,16 +24,12 @@ const AddWords = () => {
     responsiveHeadingLg,
     responsiveHeadingMd,
   } = useContext(StylesContext);
-  let {
-    sweWord,
-    sweWords,
-    setSweWord,
-    setSweWords,
-    engWord,
-    engWords,
-    setEngWord,
-    setEngWords,
-  } = useContext(GlobalContext);
+  let { lessons, allWordMatches, setAllWordMatches } =
+    useContext(GlobalContext);
+
+  let [sweWord, setSweWord] = useState('');
+  let [engWord, setEngWord] = useState('');
+  let [lesson_id, setLesson_id] = useState(null);
 
   const toast = useToast();
   const navigate = useNavigate();
@@ -41,26 +38,22 @@ const AddWords = () => {
   const handleCancel = () => {
     setEngWord('');
     setSweWord('');
-    navigate('/lessons/latest');
+    setLesson_id(null);
+    navigate('/admin/words');
   };
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const newSweWord = {
-      word: sweWord,
-    };
-    const newEngWord = {
-      word: engWord,
+    const newWordPair = {
+      eng_word: engWord,
+      swe_word: sweWord,
+      lesson_id: lesson_id,
     };
     try {
-      const sweResponse = await axios.post('/api/swe', newSweWord);
-      const allSweWords = [...sweWords, sweResponse.data];
-      setSweWords(allSweWords);
+      const newWordPairRes = await axios.post('/api/words', newWordPair);
+      const updatedWords = [...allWordMatches, newWordPairRes.data];
+      setAllWordMatches(updatedWords);
       setSweWord('');
-
-      const engResponse = await axios.post('/api/eng', newEngWord);
-      const allEngWords = [...engWords, engResponse.data];
-      setEngWords(allEngWords);
       setEngWord('');
 
       toast({
@@ -69,7 +62,7 @@ const AddWords = () => {
         duration: 9000,
         isClosable: true,
       });
-      navigate('/lessons/latest');
+      navigate('/admin/words');
     } catch (err) {
       if (err.response) {
         // Not in the 200 response range
@@ -155,6 +148,25 @@ const AddWords = () => {
                   placeholder="Give the Swedish translation..."
                   px="2"
                 />
+              </FormControl>
+
+              <FormControl>
+                <FormLabel htmlFor="lessonId" fontWeight="medium" pl="4" mb="1">
+                  Select related lesson:
+                </FormLabel>
+                <Select
+                  id="lessonId"
+                  value={lesson_id}
+                  onChange={e => setLesson_id(e.target.value)}
+                  placeholder="Select lesson"
+                  isRequired="true"
+                  maxWidth="100%"
+                  variant="filled"
+                >
+                  {lessons.map(lesson => (
+                    <option value={lesson.id}>{lesson.title}</option>
+                  ))}
+                </Select>
               </FormControl>
 
               <Flex direction="row" width="100%" justify="space-evenly">
