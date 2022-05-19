@@ -21,9 +21,9 @@ GET http://localhost:8080/api/lessons/edit/14
 
 ###
 
-// does not work WHY THE HELL?! GETS 404
-PUT http://localhost:8080/api/lessons/2
-Content-type: application/json
+// this feature is currently not available
+# PUT http://localhost:8080/api/lessons/edit/2
+# Content-type: application/json
 
-{ "id": 2, "title": "kerta4", "description": "tätä on muokattu taas", "category_id": 2}
+# { "title": "Cardinal numbers from 11 to 20", "description": "Let’s continue from where we left in the first lesson about cardinal numbers. In this lesson we are learning how to count from eleven to twenty.", "category_id": 2}
 

@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import GlobalContext from '../../contexts/Globals';
 import StylesContext from '../../contexts/Styles';
@@ -29,7 +29,6 @@ const EditLesson = () => {
     categories,
     editCategory_id,
     editDescription,
-    lesson,
     lessons,
     editTitle,
     setEditTitle,
@@ -40,7 +39,6 @@ const EditLesson = () => {
   } = useContext(GlobalContext);
 
   const toast = useToast();
-  const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -154,7 +152,6 @@ const EditLesson = () => {
                   id="title"
                   value={editTitle}
                   onChange={e => setEditTitle(e.target.value)}
-                  // placeholder={lesson.title}
                   px="2"
                 />
               </FormControl>
@@ -173,7 +170,6 @@ const EditLesson = () => {
                   id="description"
                   value={editDescription}
                   onChange={e => setEditDescription(e.target.value)}
-                  // placeholder={lesson.description}
                   px="2"
                 />
               </FormControl>

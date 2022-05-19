@@ -48,15 +48,14 @@ module.exports = {
 				err ? reject(err) : resolve(result.affectedRows > 0);
 			});
 		}),
-	edit: (id, title, description, category_id) =>
-		new Promise((resolve, reject) => {
-			let sql = `UPDATE lessons SET title = ?, description = ?, category_id =? WHERE id = ?`;
-			console.log(sql);
-			pool.query(sql, title, description, category_id, id, (err, result) => {
-				err ? reject(err) : resolve(result);
-			});
-		}),
-
+	// This feature is currently not available
+	// edit: (id, title, description, category_id) =>
+	// 	new Promise((resolve, reject) => {
+	// 		let sql = `UPDATE lessons SET title = ?, description = ?, category_id = ? WHERE id = ?`;
+	// 		pool.query(sql, [title, description, category_id, id], (err, result) => {
+	// 			err ? reject(err) : resolve(result);
+	// 		});
+	// 	}),
 	getAllWithCategoryNames: () =>
 		new Promise((resolve, reject) => {
 			pool.query(

@@ -45,6 +45,7 @@ const AdminPanel = () => {
   return (
     <Flex width="100%" direction="row" justify="center">
       <Button
+        isDisabled={true}
         leftIcon={<FiEdit />}
         aria-label="Edit"
         size={responsiveButtonSm}
