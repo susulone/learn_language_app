@@ -164,6 +164,7 @@ export const GlobalProvider = ({ children }) => {
         if (response && response.data) {
           let data = await response.data;
           setSweByLesson(data);
+          console.log('getSweWordByLessonId ran');
         }
       } catch (err) {
         if (err.response.data === false) {
@@ -183,6 +184,7 @@ export const GlobalProvider = ({ children }) => {
         let response = await axios.get(`/api/words/eng/lesson${lessonId}`);
         if (response && response.data) {
           let data = await response.data;
+          console.log('getSweWordByLessonId ran');
           setEngByLesson(data);
         }
       } catch (err) {

@@ -106,6 +106,7 @@ router.get("/eng/", async (req, res) => {
 	try {
 		let allEngWords = await controllers.getAllEng();
 		if (allEngWords === false) {
+			console.log(Math.random());
 			res.status(404).send(allEngWords);
 		} else {
 			res.status(200).send(allEngWords);

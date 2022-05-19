@@ -34,11 +34,11 @@ const AdminWords = () => {
         let sweResponse = await axios.get(`/api/words/swe`);
         let sweData = await sweResponse.data;
         setSweWords(sweData);
-
         let engResponse = await axios.get(`/api/words/eng`);
         let endData = await engResponse.data;
         setEngWords(endData);
         setContentIsLoading(false);
+        console.log(Math.random());
       } catch (err) {
         console.log(err.sweResponse);
         console.log(err.engResponse);
