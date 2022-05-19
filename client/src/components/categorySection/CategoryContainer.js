@@ -13,10 +13,11 @@ const CategoryContainer = () => {
     md: '0',
   });
 
-  let navigate = useNavigate();
-  const handleClick = id => {
-    setCategoryId(id);
-  };
+  // This feature is not currently available
+  // let navigate = useNavigate();
+  // const handleClick = id => {
+  //   setCategoryId(id);
+  // };
 
   return (
     <Box pl="5" mt={responsiveMargin}>
@@ -25,12 +26,12 @@ const CategoryContainer = () => {
       </Heading>
       {categories.map(category => (
         <Tag
-          as="button"
           key={category.id}
-          onClick={() => {
-            handleClick(category.id);
-            navigate(`/categories/${category.id}`);
-          }}
+          // as="button"
+          // onClick={() => {
+          //   handleClick(category.id);
+          //   navigate(`/categories/${category.id}`);
+          // }}
           size="md"
           borderRightRadius="full"
           borderBottomLeftRadius="full"

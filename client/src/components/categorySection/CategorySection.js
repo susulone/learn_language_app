@@ -1,26 +1,13 @@
 import React, { useContext } from 'react';
 import GlobalContext from '../../contexts/Globals';
 import StylesContext from '../../contexts/Styles';
-import {
-  Box,
-  Flex,
-  HStack,
-  Image,
-  Stack,
-  useBreakpointValue,
-} from '@chakra-ui/react';
+import { Flex, Image, useBreakpointValue } from '@chakra-ui/react';
 import CategoryContainer from './CategoryContainer';
 import LangBotLesson from '../../assets/langbot-lesson.svg';
 import LangBotSearch from '../../assets/langbot-search.svg';
 
 const CategorySection = () => {
-  const {
-    responsiveContainerSm,
-    responsiveContainerLg,
-    responsiveHeadingLg,
-    responsiveLayout,
-    responsiveImg,
-  } = useContext(StylesContext);
+  const { responsiveLayout, responsiveImg } = useContext(StylesContext);
   let { categoryImage } = useContext(GlobalContext);
 
   const responsiveCategorySection = useBreakpointValue({
@@ -41,7 +28,6 @@ const CategorySection = () => {
       align={responsiveAlignment}
       justify="space-between"
       textAlign="left"
-      //   border="solid" // for testing only
     >
       <CategoryContainer />
       {categoryImage === 'lessons' && (
