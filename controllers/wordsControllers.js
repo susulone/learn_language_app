@@ -114,17 +114,12 @@ module.exports = {
 				err ? reject(err) : resolve(result);
 			});
 		}),
-	edit: (engWord, sweWord, lessonId, bodyId) =>
+	edit: (id, eng_word, swe_word, lesson_id) =>
 		new Promise((resolve, reject) => {
 			let sql = `UPDATE words SET eng_word = ?, swe_word = ?, lesson_id = ? WHERE id = ?`;
-			pool.query(
-				sql,
-				[engWord, sweWord, lessonId, bodyId],
-				console.log(sql),
-				(err, result) => {
-					err ? reject(err) : resolve(result);
-				}
-			);
+			pool.query(sql, [eng_word, swe_word, lesson_id, id], (err, result) => {
+				err ? reject(err) : resolve(result);
+			});
 		}),
 	deleteById: (wordId) =>
 		new Promise((resolve, reject) => {

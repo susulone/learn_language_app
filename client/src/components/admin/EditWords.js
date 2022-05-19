@@ -81,10 +81,10 @@ const EditWords = () => {
   const handleEdit = async e => {
     e.preventDefault();
     const editedWordMatch = {
-      wordId: id,
-      engWord: editEngWord,
-      sweWord: editSweWord,
-      lessonId: editLesson_id,
+      id: id,
+      eng_word: editEngWord,
+      swe_word: editSweWord,
+      lesson_id: editLesson_id,
     };
     console.log(editedWordMatch);
     try {

@@ -49,18 +49,6 @@ router.delete("/:id([0-9]+)", async (req, res) => {
 	}
 });
 
-router.put("/:id([0-9]+)", async (req, res) => {
-	// const id = +req.params.id;
-	const body = req.body;
-	try {
-		let updatedResult = await controllers.edit(body);
-		res.status(200).send(updatedResult);
-		console.log(updatedResult.data);
-	} catch (err) {
-		res.status(500).end(err);
-	}
-});
-
 router.get("/swe", async (req, res) => {
 	try {
 		let allSweWords = await controllers.getAllSwe();
@@ -158,18 +146,18 @@ router.get("/lesson:id([0-9]+)", async (req, res) => {
 	}
 });
 router.put("/edit/:id([0-9]+)", async (req, res) => {
-	// const matchId = +req.params.id;
-	const bodyId = req.body.id;
-	const engWord = req.body.eng_word;
-	const sweWord = req.body.swe_word;
-	const lessonId = req.body.lesson_id;
-	console.log(engWord, sweWord, lessonId, bodyId);
+	const id = +req.params.id;
+	// const bodyId = req.body.id;
+	const eng_word = req.body.eng_word;
+	const swe_word = req.body.swe_word;
+	const lesson_id = req.body.lesson_id;
+	console.log(eng_word, swe_word, lesson_id, id);
 	try {
 		let updatedResult = await controllers.edit(
-			bodyId,
-			engWord,
-			sweWord,
-			lessonId
+			id,
+			eng_word,
+			swe_word,
+			lesson_id
 		);
 		if (updatedResult === false) {
 			res.status(404).send(false);

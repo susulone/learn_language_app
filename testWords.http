@@ -26,7 +26,7 @@ DELETE http://localhost:8080/api/words/13
 PUT http://localhost:8080/api/words/edit/1
 Content-type: application/json
 
-{"engWord": "zero", "sweWord": "noll", "lessonId": 1}
+{"eng_word": "meni", "swe_word": "läpi", "lesson_id": 1}
 
 ###
 
