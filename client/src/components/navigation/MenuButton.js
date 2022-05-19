@@ -30,7 +30,6 @@ const MenuButton = () => {
           <MenuItem fontWeight={'semibold'}>
             <Link to="/about">About</Link>
           </MenuItem>
-          <MenuDivider />
           <MenuItem fontWeight={'semibold'}>
             <Link to="/lessons/latest"> Lessons </Link>
           </MenuItem>
@@ -39,16 +38,13 @@ const MenuButton = () => {
           </MenuItem>
         </MenuGroup>
         {userRole === 'teacher' && (
-          <MenuGroup>
+          <MenuGroup title="Admin Tools:" textAlign="left" fontSize="md" ml="3">
             <MenuDivider />
-            <MenuItem fontWeight={'semibold'}>
-              <Link to="/add/lessons">Add Lessons</Link>
+            <MenuItem fontWeight={'semibold'} fontSize="sm" pl="5">
+              <Link to="/admin/lessons">Lessons</Link>
             </MenuItem>
-            <MenuItem fontWeight={'semibold'}>
-              <Link to="/add/words"> Add Words </Link>
-            </MenuItem>
-            <MenuItem fontWeight={'semibold'}>
-              <Link to="/add/matches"> Add Word Pairs </Link>
+            <MenuItem fontWeight={'semibold'} fontSize="sm" pl="5">
+              <Link to="/admin/words">Words</Link>
             </MenuItem>
           </MenuGroup>
         )}

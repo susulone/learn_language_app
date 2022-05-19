@@ -39,12 +39,12 @@ const AddLessons = () => {
   const toast = useToast();
   const navigate = useNavigate();
 
-  // clear all fields and redirect user to the lessons page
+  // clear all fields and redirect user to the admin/lessons page
   const handleCancel = () => {
     setTitle('');
     setDescription('');
     setCategory_id(null);
-    navigate('/lessons/latest');
+    navigate('/admin/lessons/');
   };
 
   const handleSubmit = async e => {
@@ -67,7 +67,7 @@ const AddLessons = () => {
         duration: 9000,
         isClosable: true,
       });
-      navigate('/lessons/latest');
+      navigate('/admin/lessons/');
     } catch (err) {
       if (err.response) {
         // Not in the 200 response range
@@ -164,10 +164,9 @@ const AddLessons = () => {
                   id="category"
                   value={category_id}
                   onChange={e => setCategory_id(e.target.value)}
-                  isRequired="true"
-                  // width="fit-content"
-                  variant="filled"
                   placeholder="Select category"
+                  isRequired="true"
+                  variant="filled"
                   maxWidth="100%"
                 >
                   {categories.map(category => (

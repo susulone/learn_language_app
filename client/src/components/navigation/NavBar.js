@@ -13,7 +13,7 @@ import MenuButton from './MenuButton';
 import SelectUser from './SelectUser';
 
 const NavBar = () => {
-  let { responsiveHeadingSm } = useContext(StylesContext);
+  const { responsiveHeadingSm } = useContext(StylesContext);
 
   const responsiveNav = useBreakpointValue({
     base: '100%',
@@ -32,7 +32,7 @@ const NavBar = () => {
         gap="2"
       >
         <Heading as="h3" size={responsiveHeadingSm}>
-          <Link to={'/'}> Beep Boop </Link>
+          <Link to={'/lessons/latest'}>Beep Boop</Link>
         </Heading>
         <MenuButton />
         <Spacer />
