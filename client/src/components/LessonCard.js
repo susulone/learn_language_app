@@ -27,10 +27,6 @@ const LessonCard = ({
 
   let navigate = useNavigate();
 
-  const handleClick = () => {
-    setLessonId(id);
-  };
-
   return (
     <Box
       key={key}
@@ -53,7 +49,7 @@ const LessonCard = ({
         <IconButton
           aria-label="Go to lesson"
           onClick={() => {
-            handleClick();
+            setLessonId(id);
             navigate(`/lessons/${id}`);
           }}
           variant="link"

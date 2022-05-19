@@ -1,8 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import GlobalContext from '../../contexts/Globals';
 import StylesContext from '../../contexts/Styles';
 import { Box, Button, Flex, Heading, Image, Text } from '@chakra-ui/react';
-// import AdminPanel from '../adminTools/AdminPanel';
 import LangBotWithEnglishFlag from '../../assets/langbot-with-english-flag.svg';
 import LangBotWithSwedishFlag from '../../assets/langbot-with-swedish-flag.svg';
 

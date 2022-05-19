@@ -2,7 +2,7 @@ import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react';
-import GlobalContext, { GlobalProvider } from './contexts/Globals';
+import { GlobalProvider } from './contexts/Globals';
 import { StylesProvider } from './contexts/Styles';
 import App from './App';
 

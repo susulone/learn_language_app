@@ -9,7 +9,7 @@ import QuizScore from './QuizScore';
 const QuizEndScreen = () => {
   const { responsiveContainerLg, responsiveHeadingLg, responsiveHeadingSm } =
     useContext(StylesContext);
-  let { setQuizState, setScore } = useContext(GlobalContext);
+  let { setQuizState, setScore, setLessonId } = useContext(GlobalContext);
   let navigate = useNavigate();
 
   const emptyQuizMemory = () => {
@@ -37,6 +37,7 @@ const QuizEndScreen = () => {
           <IconButton
             aria-label="Back to Lessons"
             onClick={() => {
+              setLessonId();
               emptyQuizMemory();
               navigate('/lessons/latest');
             }}

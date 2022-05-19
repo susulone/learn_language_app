@@ -8,38 +8,33 @@ const Quiz = () => {
   const { responsiveContainerLg, responsiveHeadingSm, responsiveHeadingLg } =
     useContext(StylesContext);
   let {
-    setQuizState,
-    wordPairs,
-    score,
-    setScore,
-    language,
-    usersAnswers,
+    engByLesson,
     languageId,
-    quizLanguage,
+    matchesByLesson,
+    score,
+    setQuizState,
+    setScore,
+    sweByLesson,
   } = useContext(GlobalContext);
 
   let [currentQuestion, setCurrentQuestion] = useState(0);
   let [answer, setAnswer] = useState('');
 
-  const updateUsersAnswer = answer => {
-    usersAnswers.push(answer);
-  };
-
   const nextQuestion = () => {
     if (languageId === 1) {
-      if (wordPairs[currentQuestion].eng_word === answer) {
+      if (engByLesson[currentQuestion].eng_word === answer) {
         setScore(score + 1);
       }
-      if (currentQuestion === wordPairs.length - 1) {
+      if (currentQuestion === matchesByLesson.length - 1) {
         setQuizState('endScreen');
       } else {
         setCurrentQuestion(currentQuestion + 1);
       }
     } else {
-      if (wordPairs[currentQuestion].swe_word === answer) {
+      if (sweByLesson[currentQuestion].swe_word === answer) {
         setScore(score + 1);
       }
-      if (currentQuestion === wordPairs.length - 1) {
+      if (currentQuestion === matchesByLesson.length - 1) {
         setQuizState('endScreen');
       } else {
         setCurrentQuestion(currentQuestion + 1);
@@ -57,7 +52,7 @@ const Quiz = () => {
             fontSize={responsiveHeadingLg}
             py="4"
           >
-            What is {wordPairs[currentQuestion].swe_word} in English?
+            What is {sweByLesson[currentQuestion].swe_word} in English?
           </Heading>
         )}
         {languageId === 2 && (
@@ -67,7 +62,7 @@ const Quiz = () => {
             fontSize={responsiveHeadingLg}
             py="4"
           >
-            What is {wordPairs[currentQuestion].eng_word} in Swedish?
+            What is {engByLesson[currentQuestion].eng_word} in Swedish?
           </Heading>
         )}
         <Input
@@ -77,7 +72,6 @@ const Quiz = () => {
           value={answer}
           onChange={e => setAnswer(e.target.value)}
         />
-        <Heading>{answer}</Heading>
         <Flex direction="row" align="center" justify="center" mt="5">
           <Heading maxWidth="50%" fontSize={responsiveHeadingSm} mr="5">
             Next Question
@@ -92,7 +86,6 @@ const Quiz = () => {
               color: '#bec3c9',
             }}
             onClick={() => {
-              updateUsersAnswer();
               setAnswer('');
               nextQuestion();
             }}

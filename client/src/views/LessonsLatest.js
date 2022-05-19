@@ -1,4 +1,5 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useLayoutEffect } from 'react';
+import axios from 'axios';
 import GlobalContext from '../contexts/Globals';
 import StylesContext from '../contexts/Styles';
 import { Box, Flex, Heading } from '@chakra-ui/react';
@@ -7,12 +8,29 @@ import LessonCard from '../components/LessonCard';
 import CategorySection from '../components/categorySection/CategorySection';
 
 const LessonsLatest = () => {
-  let { contentIsLoading, lessons, setCategoryImage } =
-    useContext(GlobalContext);
   const { responsiveContainerSm, responsiveHeadingLg } =
     useContext(StylesContext);
+  let {
+    setLessons,
+    setContentIsLoading,
+    lesson,
+    contentIsLoading,
+    lessons,
+    setCategoryImage,
+  } = useContext(GlobalContext);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   async function getLessons() {
+  //     let response = await axios.get('/api/lessons/with-category-name/');
+  //     let data = await response.data;
+  //     setLessons(data);
+  //     setContentIsLoading(false);
+  //     console.log('getLesson ran');
+  //   }
+  //   getLessons();
+  // }, [lesson]);
+
+  useLayoutEffect(() => {
     function updateLangbotImg() {
       setCategoryImage('lessons');
     }
@@ -20,17 +38,8 @@ const LessonsLatest = () => {
   }, []);
 
   return (
-    <Flex
-      direction="column"
-      align="center"
-      textAlign="left"
-      // border="solid" // for testing only
-    >
-      <Box
-        width={responsiveContainerSm}
-        direction="column"
-        // border="solid"   // for testing only
-      >
+    <Flex direction="column" align="center" textAlign="left">
+      <Box width={responsiveContainerSm} direction="column">
         <Heading
           as="h2"
           fontSize={responsiveHeadingLg}

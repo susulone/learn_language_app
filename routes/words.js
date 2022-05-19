@@ -156,41 +156,18 @@ router.get("/lesson:id([0-9]+)", async (req, res) => {
 		res.status(500).end(err);
 	}
 });
-// router.put("/edit/:id([0-9]+)", async (req, res) => {
-// 	// const matchId = +req.params.id;
-// 	const bodyId = req.body.id;
-// 	const engWord = req.body.eng_word;
-// 	const sweWord = req.body.swe_word;
-// 	const lessonId = req.body.lesson_id;
-// 	console.log(engWord, sweWord, lessonId, bodyId);
-// 	try {
-// 		let updatedResult = await controllers.edit(
-// 			bodyId,
-// 			engWord,
-// 			sweWord,
-// 			lessonId
-// 		);
-// 		if (updatedResult === false) {
-// 			res.status(404).send(false);
-// 		} else {
-// 			res.status(200).send(updatedResult);
-// 		}
-// 	} catch (err) {
-// 		res.status(500).end(err);
-// 	}
-// });
 router.put("/edit/:id([0-9]+)", async (req, res) => {
-	let paramsId = +req.params.id;
-	let wordId = req.body.wordId;
-	let engWord = req.body.engWord;
-	let sweWord = req.body.sweWord;
-	let lessonId = req.body.lessonId;
-	console.log(req.body, engWord, sweWord, wordId, paramsId, lessonId);
+	// const matchId = +req.params.id;
+	const bodyId = req.body.id;
+	const engWord = req.body.eng_word;
+	const sweWord = req.body.swe_word;
+	const lessonId = req.body.lesson_id;
+	console.log(engWord, sweWord, lessonId, bodyId);
 	try {
 		let updatedResult = await controllers.edit(
-			sweWord,
-			wordId,
+			bodyId,
 			engWord,
+			sweWord,
 			lessonId
 		);
 		if (updatedResult === false) {

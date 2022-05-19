@@ -1,12 +1,39 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import axios from 'axios';
 import GlobalContext from '../../contexts/Globals';
 import StylesContext from '../../contexts/Styles';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import FlashCard from './FlashCard';
 
 const WordPractice = () => {
-  let { wordPairs } = useContext(GlobalContext);
+  let {
+    matchesByLesson,
+    setMatchesByLesson,
+    setMaxScore,
+    setAvailability,
+    lessonId,
+  } = useContext(GlobalContext);
   let { responsiveContainerSm } = useContext(StylesContext);
+
+  // useEffect(() => {
+  //   async function getWordMatchesByLessonId() {
+  //     try {
+  //       let response = await axios.get(`/api/words/lesson${lessonId}`);
+  //       if (response && response.data) {
+  //         let data = await response.data;
+  //         console.log('getWordMatchesByLessonId ran');
+  //         setMatchesByLesson(data);
+  //         setMaxScore(data.length);
+  //         setAvailability(true);
+  //       }
+  //     } catch (err) {
+  //       if (err.response.data === false) {
+  //         setAvailability(false);
+  //       }
+  //     }
+  //   }
+  //   getWordMatchesByLessonId();
+  // }, [lessonId]);
 
   return (
     <Tabs
@@ -18,17 +45,14 @@ const WordPractice = () => {
       mt="5"
     >
       <TabList>
-        {wordPairs.map((wordPair, index) => (
-          <Tab key={wordPair.id}>{index + 1}</Tab>
+        {matchesByLesson.map((match, index) => (
+          <Tab key={match.id}>{index + 1}</Tab>
         ))}
       </TabList>
       <TabPanels>
-        {wordPairs.map(wordPair => (
-          <TabPanel key={wordPair.id}>
-            <FlashCard
-              wordInEng={wordPair.eng_word}
-              wordInSwe={wordPair.swe_word}
-            />
+        {matchesByLesson.map(match => (
+          <TabPanel key={match.id}>
+            <FlashCard wordInEng={match.eng_word} wordInSwe={match.swe_word} />
           </TabPanel>
         ))}
       </TabPanels>
