@@ -84,32 +84,32 @@ export const GlobalProvider = ({ children }) => {
   }, [categoryId]);
 
   let [sweWords, setSweWords] = useState([]);
-  useEffect(() => {
-    async function getAllSweWords() {
-      try {
-        let response = await axios.get(`/api/words/swe`);
-        let data = await response.data;
-        setSweWords(data);
-      } catch (err) {
-        console.log(err.response);
-      }
-    }
-    getAllSweWords();
-  }, [allWordMatches, sweWords]);
+  // useEffect(() => {
+  //   async function getAllSweWords() {
+  //     try {
+  //       let response = await axios.get(`/api/words/swe`);
+  //       let data = await response.data;
+  //       setSweWords(data);
+  //     } catch (err) {
+  //       console.log(err.response);
+  //     }
+  //   }
+  //   getAllSweWords();
+  // }, [allWordMatches, sweWords]);
 
   let [engWords, setEngWords] = useState([]);
-  useEffect(() => {
-    async function getAllEngWords() {
-      try {
-        let response = await axios.get(`/api/words/eng`);
-        let data = await response.data;
-        setEngWords(data);
-      } catch (err) {
-        console.log(err.response);
-      }
-    }
-    getAllEngWords();
-  }, [allWordMatches, engWords]);
+  // useEffect(() => {
+  //   async function getAllEngWords() {
+  //     try {
+  //       let response = await axios.get(`/api/words/eng`);
+  //       let data = await response.data;
+  //       setEngWords(data);
+  //     } catch (err) {
+  //       console.log(err.response);
+  //     }
+  //   }
+  //   getAllEngWords();
+  // }, [allWordMatches]);
 
   let [wordMatchId, setWordMatchId] = useState(null);
 
