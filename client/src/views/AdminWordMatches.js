@@ -1,11 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import GlobalContext from '../contexts/Globals';
 import StylesContext from '../contexts/Styles';
-import { Flex, Button, Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading } from '@chakra-ui/react';
 import LoadIndicator from '../components/LoadIndicator';
-import SmallLessonCard from '../components/SmallLessonCard';
-import { useNavigate } from 'react-router-dom';
 
 const AdminWords = () => {
   const { responsiveContainerLg, responsiveHeadingSm, responsiveHeadingLg } =
@@ -16,13 +15,7 @@ const AdminWords = () => {
     setSweWords,
     setEngWords,
     engWords,
-    allWordMatches,
-    setAllWordMatches,
-    wordMatchId,
     setWordMatchId,
-    lessons,
-    lesson,
-    setLessons,
     setId,
     setContentIsLoading,
   } = useContext(GlobalContext);

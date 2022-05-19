@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import GlobalContext from '../../contexts/Globals';
 import StylesContext from '../../contexts/Styles';
 import { Box, Tag, Heading, useBreakpointValue } from '@chakra-ui/react';
 
 const CategoryContainer = () => {
-  let { categories, setCategoryId } = useContext(GlobalContext);
+  let {
+    categories,
+    // setCategoryId
+  } = useContext(GlobalContext);
   let { responsiveHeadingXs } = useContext(StylesContext);
 
   const responsiveMargin = useBreakpointValue({

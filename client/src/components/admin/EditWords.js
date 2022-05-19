@@ -35,7 +35,6 @@ const EditWords = () => {
   } = useContext(StylesContext);
   let {
     allWordMatches,
-    id,
     lessons,
     setWordMatch,
     setAllWordMatches,

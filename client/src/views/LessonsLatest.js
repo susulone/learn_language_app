@@ -1,5 +1,9 @@
-import React, { useContext, useEffect, useLayoutEffect } from 'react';
-import axios from 'axios';
+import React, {
+  useContext,
+  // useEffect,
+  useLayoutEffect,
+} from 'react';
+// import axios from 'axios';
 import GlobalContext from '../contexts/Globals';
 import StylesContext from '../contexts/Styles';
 import { Box, Flex, Heading } from '@chakra-ui/react';
@@ -11,9 +15,9 @@ const LessonsLatest = () => {
   const { responsiveContainerSm, responsiveHeadingLg } =
     useContext(StylesContext);
   let {
-    setLessons,
-    setContentIsLoading,
-    lesson,
+    // setLessons,
+    // setContentIsLoading,
+    // lesson,
     contentIsLoading,
     lessons,
     setCategoryImage,

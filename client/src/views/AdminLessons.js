@@ -2,14 +2,13 @@ import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import GlobalContext from '../contexts/Globals';
 import StylesContext from '../contexts/Styles';
-import { Flex, Button, Box, Heading } from '@chakra-ui/react';
+import { Flex, Button, Heading } from '@chakra-ui/react';
 import LoadIndicator from '../components/LoadIndicator';
 import SmallLessonCard from '../components/SmallLessonCard';
 import { useNavigate } from 'react-router-dom';
 
 const AdminLessons = () => {
-  const { responsiveContainerLg, responsiveHeadingLg } =
-    useContext(StylesContext);
+  const { responsiveHeadingLg } = useContext(StylesContext);
   let { contentIsLoading, lessons, lesson, setLessons, setContentIsLoading } =
     useContext(GlobalContext);
   const navigate = useNavigate();

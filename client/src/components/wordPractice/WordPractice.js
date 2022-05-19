@@ -1,5 +1,8 @@
-import React, { useContext, useEffect } from 'react';
-import axios from 'axios';
+import React, {
+  useContext,
+  // useEffect
+} from 'react';
+// import axios from 'axios';
 import GlobalContext from '../../contexts/Globals';
 import StylesContext from '../../contexts/Styles';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
@@ -8,10 +11,10 @@ import FlashCard from './FlashCard';
 const WordPractice = () => {
   let {
     matchesByLesson,
-    setMatchesByLesson,
-    setMaxScore,
-    setAvailability,
-    lessonId,
+    // setMatchesByLesson,
+    // setMaxScore,
+    // setAvailability,
+    // lessonId,
   } = useContext(GlobalContext);
   let { responsiveContainerSm } = useContext(StylesContext);
 
