@@ -37,7 +37,8 @@ const AdminWords = () => {
         console.log(err.engResponse);
       }
     }
-    console.log('getWords (from AdminWordMatches) ran');
+    // // for testing purposes only
+    // console.log('getWords (from AdminWordMatches) ran');
     getWords();
   }, []);
 

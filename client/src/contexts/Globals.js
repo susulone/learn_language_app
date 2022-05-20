@@ -42,6 +42,9 @@ export const GlobalProvider = ({ children }) => {
   let [engWord, setEngWord] = useState('');
   let [lesson_id, setLesson_id] = useState(null);
 
+  // EDIT WORD PAIR //
+  let [id, setId] = useState(null);
+
   // LESSONS //
   let [lessons, setLessons] = useState([]);
   let [lessonId, setLessonId] = useState(1);
@@ -180,7 +183,7 @@ export const GlobalProvider = ({ children }) => {
     // for testing purposes only
     // console.log('getSweWordByLessonId ran');
     getSweWordByLessonId();
-  });
+  }, [lessonId]);
   //[lessonId]
 
   // ENGLISH WORDS //
@@ -225,7 +228,7 @@ export const GlobalProvider = ({ children }) => {
     // for testing purposes only
     // console.log('getEngWordByLessonId ran');
     getEngWordByLessonId();
-  }, []);
+  }, [lessonId]);
   // [lessonId]
 
   // CATEGORIES //
@@ -361,6 +364,9 @@ export const GlobalProvider = ({ children }) => {
         // setEditDescription,
         // editCategory_id,
         // setEditCategory_id,
+
+        id,
+        setId,
 
         sweWord,
         setSweWord,
