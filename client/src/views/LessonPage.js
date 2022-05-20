@@ -1,3 +1,7 @@
+/**
+ * @author Suvi Sulonen <suvi.sulonen@gmail.com>
+ * @version 1.0.0
+ */
 import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';

@@ -1,3 +1,7 @@
+/**
+ * @author Suvi Sulonen <suvi.sulonen@gmail.com>
+ * @version 1.0.0
+ */
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import StylesContext from '../contexts/Styles';

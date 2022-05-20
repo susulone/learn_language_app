@@ -1,3 +1,7 @@
+/**
+ * @author Suvi Sulonen <suvi.sulonen@gmail.com>
+ * @version 1.0.0
+ */
 import React, {
   useContext,
   // useEffect,
@@ -54,6 +58,8 @@ const LessonsLatest = () => {
         >
           Choose <br /> your next lesson:
         </Heading>
+        {/* Display the LoadIndicator while content is loading.
+        After the content has finished loading map out lessons. */}
         {contentIsLoading === true && <LoadIndicator />}
         {contentIsLoading === false &&
           lessons.map(lesson => (

@@ -1,3 +1,7 @@
+/**
+ * @author Suvi Sulonen <suvi.sulonen@gmail.com>
+ * @version 1.0.0
+ */
 require("dotenv").config();
 const mysql = require("mysql");
 const config = require("../configs/databaseConfig");
@@ -77,7 +81,7 @@ module.exports = {
 			});
 		}),
 	/**
-	 * add will perform an database query to insert new lesson whth the information given as a parameter.
+	 * add will perform an database query to insert new lesson with the information given as a parameter.
 	 * The succesfully resived data will be returned with the promises resolve.
 	 * @method add
 	 * @param {object} set - an object with title, description and catetegory_id

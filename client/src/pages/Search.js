@@ -1,7 +1,11 @@
+/**
+ * @author Suvi Sulonen <suvi.sulonen@gmail.com>
+ * @version 1.0.0
+ */
 import React, { useContext, useEffect } from 'react';
 import GlobalContext from '../contexts/Globals';
 import StylesContext from '../contexts/Styles';
-import { Flex, Heading, Image, Stack } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import CategorySection from '../components/categorySection/CategorySection';
 
 const Search = () => {

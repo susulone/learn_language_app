@@ -1,3 +1,7 @@
+/**
+ * @author Suvi Sulonen <suvi.sulonen@gmail.com>
+ * @version 1.0.0
+ */
 import React, { useContext } from 'react';
 import StylesContext from '../contexts/Styles';
 import { Flex, Heading, Image, Stack, Text } from '@chakra-ui/react';
@@ -41,7 +45,7 @@ const About = () => {
         <Text fontSize={responsiveBodyText} fontWeight="medium">
           Each lesson has a practice section where you can practice the words
           with my help! And after you feel like you are ready, you can test what
-          you have leand on the quiz section!
+          you have learned on the quiz section!
         </Text>
         <Flex justify="center">
           <Image

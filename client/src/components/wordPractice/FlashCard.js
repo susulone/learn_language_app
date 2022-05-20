@@ -1,3 +1,7 @@
+/**
+ * @author Suvi Sulonen <suvi.sulonen@gmail.com>
+ * @version 1.0.0
+ */
 import React, { useContext, useState } from 'react';
 import StylesContext from '../../contexts/Styles';
 import {

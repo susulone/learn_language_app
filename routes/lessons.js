@@ -1,3 +1,7 @@
+/**
+ * @author Suvi Sulonen <suvi.sulonen@gmail.com>
+ * @version 1.0.0
+ */
 const express = require("express");
 const router = express.Router();
 const controllers = require("../controllers/lessonControllers");

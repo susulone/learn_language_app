@@ -1,3 +1,7 @@
+/**
+ * @author Suvi Sulonen <suvi.sulonen@gmail.com>
+ * @version 1.0.0
+ */
 import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -22,6 +26,14 @@ const AdminWords = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    /**
+     * getWords will perform two api calls to fetch all the Swedish and English words from the backend.
+     * The recieved data will be inserted to the setSweWords and setEngWords state.
+     * After the data has has been recieved the  setContentIsLoading is test to false.
+     *
+     * @async
+     * @function getWords
+     */
     async function getWords() {
       try {
         let sweResponse = await axios.get(`/api/words/swe`);
@@ -31,7 +43,6 @@ const AdminWords = () => {
         let endData = await engResponse.data;
         setEngWords(endData);
         setContentIsLoading(false);
-        console.log(Math.random());
       } catch (err) {
         console.log(err.sweResponse);
         console.log(err.engResponse);
@@ -75,6 +86,7 @@ const AdminWords = () => {
             >
               <Heading fontSize={responsiveHeadingSm}>English words:</Heading>
               <Box width="min-content" direction="column">
+                {/* Map through all the English words and make a button for each with a link to the edit view */}
                 {engWords.map(engWord => (
                   <Button
                     key={engWord.id}
@@ -105,6 +117,7 @@ const AdminWords = () => {
             >
               <Heading fontSize={responsiveHeadingSm}>Swedish words:</Heading>
               <Box width="min-content">
+                {/* Map through all the Swedish words and make a button for each with a link to the edit view */}
                 {sweWords.map(sweWord => (
                   <Button
                     key={sweWord.id}

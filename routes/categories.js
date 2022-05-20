@@ -1,3 +1,7 @@
+/**
+ * @author Suvi Sulonen <suvi.sulonen@gmail.com>
+ * @version 1.0.0
+ */
 const express = require("express");
 const router = express.Router();
 const controllers = require("../controllers/categoryControllers.js");
@@ -23,7 +27,8 @@ router.get("/:id([0-9]+)", async (req, res) => {
 		res.status(500).end(err);
 	}
 });
-
+// This feature is currently not available
+//
 // router.delete("/:id([0-9]+)", async (req, res) => {
 // 	const id = +req.params.id;
 // 	try {
@@ -38,6 +43,8 @@ router.get("/:id([0-9]+)", async (req, res) => {
 // 	}
 // });
 
+// This feature is currently not available
+//
 // router.post("/", async (reg, res) => {
 // 	let newCategory = reg.body;
 // 	try {
