@@ -1,3 +1,7 @@
+/**
+ * @author Suvi Sulonen <suvi.sulonen@gmail.com>
+ * @version 1.0.0
+ */
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -39,7 +43,12 @@ const AddLessons = () => {
   const toast = useToast();
   const navigate = useNavigate();
 
-  // clear all fields and redirect user to the admin/lessons page
+  /**
+   * handleCancel function will clear the fields in the form
+   * by reverting all the used setStates values back to their defaults.
+   * Lastly it will redirect the user to the /admin/lessons page.
+   * @function handleCancel
+   */
   const handleCancel = () => {
     setTitle('');
     setDescription('');
@@ -47,8 +56,20 @@ const AddLessons = () => {
     navigate('/admin/lessons/');
   };
 
+  /**
+   * @async
+   * @function handleSubmit
+   * @param {event} e
+   */
   const handleSubmit = async e => {
     e.preventDefault();
+    /**
+     * newLessons will take the user given input values from the form and
+     * configures them into an object to be sent to the backend within the
+     * post request.
+     * @type {{title: string, desctiption: string, category_id: number}}
+     * @memberof handleSubmit
+     */
     const newLesson = {
       title: title,
       description: description,

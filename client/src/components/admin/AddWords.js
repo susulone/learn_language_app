@@ -1,3 +1,7 @@
+/**
+ * @author Suvi Sulonen <suvi.sulonen@gmail.com>
+ * @version 1.0.0
+ */
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -34,7 +38,12 @@ const AddWords = () => {
   const toast = useToast();
   const navigate = useNavigate();
 
-  // clear all fields and redirect user to the lessons page
+  /**
+   * handleCancel function will clear the fields in the form
+   * by reverting all the used setStates values back to their defaults.
+   * Lastly it will redirect the user to the /admin/words page.
+   * @function handleCancel
+   */
   const handleCancel = () => {
     setEngWord('');
     setSweWord('');
@@ -42,8 +51,20 @@ const AddWords = () => {
     navigate('/admin/words');
   };
 
+  /**
+   * @async
+   * @function handleSubmit
+   * @param {event} e
+   */
   const handleSubmit = async e => {
     e.preventDefault();
+    /**
+     * newWordPair will take the user given input values from the form and
+     * configures them into an object to be sent to the backend within the
+     * post request.
+     * @type {{eng_word: string, swe_word: string, lesson_id: number}}
+     * @memberof handleSubmit
+     */
     const newWordPair = {
       eng_word: engWord,
       swe_word: sweWord,

@@ -11,6 +11,16 @@ router.get("/", async (req, res) => {
 	}
 });
 
+router.post("/", async (req, res) => {
+	let newLesson = req.body;
+	try {
+		let createdLesson = await controllers.add(newLesson);
+		res.status(201).send(createdLesson);
+	} catch (err) {
+		res.status(500).end(err);
+	}
+});
+
 router.get("/:id([0-9]+)", async (req, res) => {
 	const id = +req.params.id;
 	try {
@@ -39,21 +49,24 @@ router.delete("/:id([0-9]+)", async (req, res) => {
 	}
 });
 
-router.get("/edit/:id([0-9]+)", async (req, res) => {
-	const id = +req.params.id;
-	try {
-		let resultById = await controllers.findById(id);
-		if (resultById === null) {
-			res.status(404).end();
-		} else {
-			res.status(200).send(resultById);
-		}
-	} catch (err) {
-		res.status(500).end(err);
-	}
-});
+// This feature is currently not available
+//
+// router.get("/edit/:id([0-9]+)", async (req, res) => {
+// 	const id = +req.params.id;
+// 	try {
+// 		let resultById = await controllers.findById(id);
+// 		if (resultById === null) {
+// 			res.status(404).end();
+// 		} else {
+// 			res.status(200).send(resultById);
+// 		}
+// 	} catch (err) {
+// 		res.status(500).end(err);
+// 	}
+// });
 
-// this feature is currently not available
+// This feature is currently not available
+//
 // router.put("/edit/:id([0-9]+)", async (req, res) => {
 // 	const id = +req.params.id;
 // 	// let id = req.body.id;
@@ -75,16 +88,6 @@ router.get("/edit/:id([0-9]+)", async (req, res) => {
 // 		}
 // 	} catch (err) {
 // 		res.status(500).end(err.data);
-// 	}
-// });
-
-// router.post("/", async (req, res) => {
-// 	let newLesson = req.body;
-// 	try {
-// 		let createdLesson = await controllers.add(newLesson);
-// 		res.status(201).send(createdLesson);
-// 	} catch (err) {
-// 		res.status(500).end(err);
 // 	}
 // });
 
