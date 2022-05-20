@@ -119,7 +119,7 @@ export const GlobalProvider = ({ children }) => {
     // for testing purposes only
     // console.log('getAllWordMatches ran');
     getAllWordMatches();
-  });
+  }, []);
 
   // useEffect(() => {
   //   async function getWordMatchesByLessonId() {
