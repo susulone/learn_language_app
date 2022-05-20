@@ -21,6 +21,8 @@ This project is a fullstack language learning aplication for children. It is bui
 
 This project is currently being hosted in Heroku. You can test it [here](https://tranquil-reaches-86519.herokuapp.com/)
 
+[![Image of the screencast](https://img.youtube.com/vi/DyoGnd4vMrM/0.jpg)](https://www.youtube.com/watch?v=DyoGnd4vMrM)
+
 ## Background<a name="background"></a>
 
 This project was made as a part of TAMK's Backend Delevopment course. The purpose of this project is to familiarize myself with the consepts of of building a working backend and how to connect it to a frontend project.
