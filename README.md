@@ -19,8 +19,6 @@
 
 This project is a fullstack language learning aplication for children. It is build with individual lessons that the user can choose from. Each lesson has a set of words to practice and test on.
 
-This project is currently being hosted in Heroku. You can test it [here](https://tranquil-reaches-86519.herokuapp.com/)
-
 [![Image of the screencast](https://img.youtube.com/vi/DyoGnd4vMrM/0.jpg)](https://www.youtube.com/watch?v=DyoGnd4vMrM)
 
 ## Background<a name="background"></a>
